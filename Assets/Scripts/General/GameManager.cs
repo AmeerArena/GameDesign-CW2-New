@@ -1,0 +1,31 @@
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    public static GameManager Instance;
+
+    public int currentDay = 1;
+    public DayCounter dayCounter;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void NextDay()
+    {
+        currentDay++;
+        Debug.Log("Day: " + currentDay);
+
+        if (dayCounter != null)
+            dayCounter.UpdateDayText(currentDay);
+    }
+}
