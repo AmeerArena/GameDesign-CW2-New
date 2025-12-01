@@ -16,13 +16,11 @@ public class NPC : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        // Don’t start a new interaction if this NPC is already talking
         return !isDialogueActive;
     }
 
     private void Update()
     {
-        // ESC closes dialogue instead of opening pause menu
         if (isDialogueActive && Input.GetKeyDown(KeyCode.Escape))
         {
             EndDialogue();
@@ -31,7 +29,6 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        // If no data, or game is paused by something else and we’re not already in this dialogue
         if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
             return;
@@ -56,7 +53,6 @@ public class NPC : MonoBehaviour, IInteractable
         npcFullImage.sprite = dialogueData.npcFullSprite;
         dialoguePanel.SetActive(true);
 
-        // Dialogue “owns” ESC and pauses the game without showing pause menu
         PauseController.EscapeBlocked = true;
         PauseController.SetPause(true, false);
 
@@ -89,7 +85,6 @@ public class NPC : MonoBehaviour, IInteractable
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueText.text += letter;
-            // Use realtime so it animates while Time.timeScale = 0
             yield return new WaitForSecondsRealtime(dialogueData.textSpeed);
         }
 
@@ -103,7 +98,6 @@ public class NPC : MonoBehaviour, IInteractable
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
 
-        // Release pause + give ESC back to PauseController
         PauseController.SetPause(false, false);
         PauseController.EscapeBlocked = false;
     }
