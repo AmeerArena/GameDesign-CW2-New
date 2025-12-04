@@ -4,93 +4,70 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    public int npcState = 0;
+    public bool isHungry = false;
+    public bool isCold = false;
     public bool hasTools = false;
     public bool hasEaten = false;
     public bool hasWood = false;
 
     public void DayReset()
     {
-        if (npcState == 1 || npcState == 3)
+        if (isHungry)
         {
             if (hasEaten)
             {
-                SetHungry(true);
+                isHungry = false;
             }
             else
             {
-                //kill the npc
+                //kill npc
             }
         }
 
-        if (!hasEaten && hasWood)
+        if (hasWood)
         {
-            npcState = 3;
-        }
-        else if (hasWood)
-        {
-            npcState = 2;
-        }
-        else if (!hasEaten)
-        {
-            npcState = 1;
+            isCold = false;
         }
         else
         {
-            npcState = 0;
+            isCold = true;
         }
 
         hasEaten = false;
         hasWood = false;
     }
-    void SetCold(bool b)
+
+    public bool GetIsCold()
     {
-        if (b)
-        {
-            if (npcState == 1)
-            {
-                npcState = 3;
-            }
-            else
-            {
-                npcState = 2;
-            }
-        }
-        else
-        {
-            if (npcState == 2)
-            {
-                npcState = 0;
-            }
-            else if (npcState == 3)
-            {
-                npcState = 1;
-            }
-        }
+        return isCold;
     }
-    void SetHungry(bool b)
+    public bool GetIsHungry()
     {
-        if (b)
+        return isHungry;
+    }
+    public bool GetHasEaten()
+    {
+        return hasEaten;
+    }
+    public bool GetHasWood()
+    {
+        return hasWood;
+    }
+
+    public int GetState()
+    {
+        if (isCold && isHungry)
         {
-            if (npcState == 2)
-            {
-                npcState = 3;
-            }
-            else
-            {
-                npcState = 1;
-            }
+            return 3;
         }
-        else
+        else if (isCold)
         {
-            if (npcState == 1)
-            {
-                npcState = 0;
-            }
-            else if (npcState == 3)
-            {
-                npcState = 2;
-            }
+            return 2;
         }
+        else if (isHungry)
+        {
+            return 1;
+        }
+        return 0;
     }
 }

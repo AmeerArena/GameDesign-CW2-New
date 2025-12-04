@@ -273,30 +273,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1510758903}
     m_Modifications:
-    - target: {fileID: 327724503976965558, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_text
-      value: Continue
-      objectReference: {fileID: 0}
-    - target: {fileID: 327724503976965558, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_fontSize
-      value: 28.7
-      objectReference: {fileID: 0}
     - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 639907049}
-    - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -328,18 +308,6 @@ PrefabInstance:
     - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_SizeDelta.y
       value: 63.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.8934913
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8934913
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.8934913
       objectReference: {fileID: 0}
     - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_LocalPosition.x
@@ -954,6 +922,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8105736219194476465, guid: f295a1961aa73874abf77e853069bdf9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2000380482}
+    - targetCorrespondingSourceObject: {fileID: 8105736219194476465, guid: f295a1961aa73874abf77e853069bdf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2000380483}
   m_SourcePrefab: {fileID: 100100000, guid: f295a1961aa73874abf77e853069bdf9, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -12382,7 +12353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18da0f8140519c4a876d213510de3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcState: 0
+  isHungry: 0
+  isCold: 0
   hasTools: 0
   hasEaten: 0
   hasWood: 0
@@ -13568,30 +13540,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1510758903}
     m_Modifications:
-    - target: {fileID: 327724503976965558, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_text
-      value: Quit to Main
-      objectReference: {fileID: 0}
-    - target: {fileID: 327724503976965558, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_fontSize
-      value: 23.15
-      objectReference: {fileID: 0}
     - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 639907049}
-    - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitToMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13623,18 +13575,6 @@ PrefabInstance:
     - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_SizeDelta.y
       value: 64.4608
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.8934913
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8934913
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.8934913
       objectReference: {fileID: 0}
     - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14110,6 +14050,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 8c7e3bb97af7b8e469c3ec779660f7c0, type: 2}
+--- !u!114 &2000380483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000380481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18da0f8140519c4a876d213510de3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHungry: 0
+  isCold: 0
+  hasTools: 0
+  hasEaten: 0
+  hasWood: 0
 --- !u!1001 &1737122220592412953
 PrefabInstance:
   m_ObjectHideFlags: 0

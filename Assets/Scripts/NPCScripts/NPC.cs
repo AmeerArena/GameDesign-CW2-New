@@ -11,9 +11,12 @@ public class NPC : MonoBehaviour, IInteractable
     private int dialogueIndex;
     private bool isTalking, isDialogueActive;
 
+    private NPCController npcController;
+
     void Start()
     {
         dialogueUI = DialogueController.Instance;
+        npcController = gameObject.GetComponent<NPCController>();
     }
 
     public bool CanInteract()
@@ -54,7 +57,9 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        dialogueUI.SetNPCInfo(dialogueData.npcName, dialogueData.npcFullSprite);
+
+
+        dialogueUI.SetNPCInfo(dialogueData.npcName, getNPCSprite());
         dialogueUI.ShowDialogueUI(true);
 
         PauseController.EscapeBlocked = true;
@@ -136,6 +141,20 @@ public class NPC : MonoBehaviour, IInteractable
     {
         StopAllCoroutines();
         StartCoroutine(TypeLine());
+    }
+
+    Sprite getNPCSprite()
+    {
+        switch(npcController.GetState())
+        {
+          case 3:
+            return dialogueData.npcFullSprite3;
+          case 2:
+            return dialogueData.npcFullSprite2;
+          case 1:
+            return dialogueData.npcFullSprite1;
+        }
+        return dialogueData.npcFullSprite0;
     }
 
     public void EndDialogue()

@@ -6,7 +6,10 @@ using UnityEngine;
 public class NPCDialogue : ScriptableObject
 {
     public string npcName;
-    public Sprite npcFullSprite;
+    public Sprite npcFullSprite0;
+    public Sprite npcFullSprite1;
+    public Sprite npcFullSprite2;
+    public Sprite npcFullSprite3;
     public string[] dialogueLines;
     public bool[] endDialogueLines;
     public float textSpeed = 0.05f;

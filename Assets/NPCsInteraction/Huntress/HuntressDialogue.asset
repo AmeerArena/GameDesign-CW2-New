@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: HuntressDialogue
   m_EditorClassIdentifier: 
   npcName: Huntress
-  npcFullSprite: {fileID: 637426649, guid: 7a01e12766425ab4d9bf211a3a11774c, type: 3}
+  npcFullSprite0: {fileID: 637426649, guid: 7a01e12766425ab4d9bf211a3a11774c, type: 3}
+  npcFullSprite1: {fileID: -181944748, guid: 7a01e12766425ab4d9bf211a3a11774c, type: 3}
+  npcFullSprite2: {fileID: -1106757615, guid: 7a01e12766425ab4d9bf211a3a11774c, type: 3}
+  npcFullSprite3: {fileID: 1142163858, guid: 7a01e12766425ab4d9bf211a3a11774c, type: 3}
   dialogueLines:
   - "So you\u2019re the new mayor?"
   - Hope you got more backbone than the last guy.
