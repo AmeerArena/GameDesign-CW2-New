@@ -1387,7 +1387,7 @@ MonoBehaviour:
   nameText: {fileID: 470356326}
   npcFullImage: {fileID: 589651679}
   choiceContainer: {fileID: 1979363265}
-  choiceButtonPrefab: {fileID: 849716191583022700, guid: e69b02d6db81eb2449733be377a4d4b2, type: 3}
+  choiceButtonPrefab: {fileID: 849716191583022700, guid: e4f12c543cdace449b1ac1f0cf054818, type: 3}
 --- !u!1 &721114932
 GameObject:
   m_ObjectHideFlags: 0
