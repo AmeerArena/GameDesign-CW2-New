@@ -19,4 +19,6 @@ MonoBehaviour:
   - Hope you got more backbone than the last guy.
   - "Right now you\u2019re looking at the best hunter in town."
   - So tell me when you need a job done properly.
-  textSpeed: 0.02
+  endDialogueLines: 
+  textSpeed: 0.01
+  choices: []
