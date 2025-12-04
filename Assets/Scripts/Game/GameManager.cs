@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,17 +6,19 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("Scene Names")]
-    [Tooltip("Name of your main menu scene.")]
-    public string mainMenuSceneName = "MainMenu";
+    [SerializeField] private string mainMenuSceneName = "MainMenuScene";
+    [SerializeField] private string settingsSceneName = "SettingsScene";
+    [SerializeField] private string gameSceneName = "TiledScene";
 
-    [Tooltip("Name of the first gameplay scene (e.g. Level1, GameScene, etc.).")]
-    public string firstGameSceneName = "GameScene";
+    [Header("Navigation")]
+    public string previousScene;
 
-    private string _currentSceneName;
+    [Header("Day System")]
+    public DayCounter dayCounter;
+    public int currentDay = 1;
 
     private void Awake()
     {
-        // Singleton pattern – only one GameManager across all scenes
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -26,122 +27,65 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        _currentSceneName = SceneManager.GetActiveScene().name;
-
-        // Just in case we ever end up paused on load
-        SafeUnpause();
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        Time.timeScale = 1f;
     }
 
-    private void OnDisable()
+    public void StartGame()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        previousScene = SceneManager.GetActiveScene().name;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(gameSceneName);
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void LoadSettings()
     {
-        _currentSceneName = scene.name;
-
-        // Make sure game isn't stuck paused after scene changes
-        SafeUnpause();
+        previousScene = SceneManager.GetActiveScene().name;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(settingsSceneName);
     }
 
-    // =========================
-    //  PUBLIC API – BUTTON HOOKS
-    // =========================
-
-    /// <summary>
-    /// Load the main menu scene (for menu buttons).
-    /// </summary>
-    public void LoadMainMenu()
-    {
-        StartCoroutine(LoadSceneRoutine(mainMenuSceneName));
-    }
-
-    /// <summary>
-    /// Start a new game from the first gameplay scene.
-    /// </summary>
-    public void StartNewGame()
-    {
-        StartCoroutine(LoadSceneRoutine(firstGameSceneName));
-    }
-
-    /// <summary>
-    /// Generic scene loader you can call from other scripts.
-    /// </summary>
-    public void LoadScene(string sceneName)
-    {
-        if (string.IsNullOrEmpty(sceneName))
-        {
-            Debug.LogWarning("GameManager.LoadScene called with empty sceneName.");
-            return;
-        }
-
-        StartCoroutine(LoadSceneRoutine(sceneName));
-    }
-
-    /// <summary>
-    /// Quit the game (works in build, stops play mode in editor).
-    /// </summary>
-    public void QuitGame()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
-    }
-
-    // =========================
-    //  INTERNAL HELPERS
-    // =========================
-
-    private IEnumerator LoadSceneRoutine(string sceneName)
-    {
-        // Ensure game is unpaused and ESC is free before changing scenes
-        SafeUnpause();
-
-        AsyncOperation loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-
-        if (loadOp == null)
-        {
-            Debug.LogError($"Failed to load scene '{sceneName}'. Check that it's added to Build Settings.");
-            yield break;
-        }
-
-        while (!loadOp.isDone)
-        {
-            yield return null;
-        }
-
-        // Just to be extra safe
-        SafeUnpause();
-    }
-
-    /// <summary>
-    /// Centralised unpause logic so we don't get stuck with Time.timeScale = 0
-    /// or EscapeBlocked staying true across scenes.
-    /// </summary>
-    private void SafeUnpause()
+    public void BackToPreviousScene()
     {
         Time.timeScale = 1f;
 
-        // These assume your PauseController exists as we've been using it in NPC.
-        // If not, you can safely remove these calls.
-        try
+        if (!string.IsNullOrEmpty(previousScene))
         {
-            // If your SetPause signature is (bool paused, bool showPauseMenu = true)
-            PauseController.SetPause(false, false);
-            PauseController.EscapeBlocked = false;
+            string target = previousScene;
+            previousScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(target);
         }
-        catch
+        else
         {
-            // If PauseController isn't present in some test scenes, don't hard-crash.
+            LoadMainMenu();
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f;
+        previousScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
+
+    public void SetDay(int day)
+    {
+        currentDay = Mathf.Max(1, day);
+    }
+
+    public void IncrementDay()
+    {
+        currentDay++;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

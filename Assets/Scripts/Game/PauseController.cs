@@ -17,7 +17,6 @@ public class PauseController : MonoBehaviour
 
     private void Awake()
     {
-        // Basic singleton
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -35,7 +34,7 @@ public class PauseController : MonoBehaviour
 
     private void Update()
     {
-        // If something “owns” ESC (e.g. dialogue), do nothing
+        // If something owns ESC, do nothing
         if (EscapeBlocked)
             return;
 
@@ -61,7 +60,6 @@ public class PauseController : MonoBehaviour
         GameManager.Instance.LoadMainMenu();
     }
 
-    // Static API so other scripts can pause without showing the pause menu
     public static void SetPause(bool pause, bool showPauseMenu = true)
     {
         if (Instance == null)
@@ -87,7 +85,5 @@ public class PauseController : MonoBehaviour
         {
             pausePanel.SetActive(pause);
         }
-        // If showPauseMenu == false, we just pause/unpause the game
-        // without touching the pause panel (used by dialogue).
     }
 }
