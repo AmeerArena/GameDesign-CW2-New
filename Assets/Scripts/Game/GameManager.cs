@@ -74,18 +74,36 @@ public class GameManager : MonoBehaviour
     public void SetDay(int day)
     {
         currentDay = Mathf.Max(1, day);
+
+        if (dayCounter != null)
+        {
+            dayCounter.UpdateDayText(currentDay);
+        }
     }
 
     public void IncrementDay()
     {
         currentDay++;
+
+        if (dayCounter != null)
+        {
+            dayCounter.UpdateDayText(currentDay);
+        }
     }
 
     public void QuitGame()
     {
         Application.Quit();
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#endif
+    #endif
     }
+
+    private void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Equals))   // press = key
+    {
+        IncrementDay();
+    }
+}
 }

@@ -3,26 +3,28 @@ using TMPro;
 
 public class DayCounter : MonoBehaviour
 {
-    private TextMeshPro text;   // no public field anymore
+    private TMP_Text text;   // works for TextMeshProUGUI and TextMeshPro
 
     private void Awake()
     {
-        // try to get the TextMeshPro on THIS object
-        text = GetComponent<TextMeshPro>();
+        text = GetComponent<TMP_Text>();
 
         if (text == null)
         {
-            Debug.LogError("DayCounter: No TextMeshPro found on this GameObject.");
+            Debug.LogError("DayCounter: No TMP_Text found on this GameObject.");
         }
     }
 
     private void Start()
     {
-        // optional initial update if GameManager exists
         if (GameManager.Instance != null)
         {
             GameManager.Instance.dayCounter = this;
             UpdateDayText(GameManager.Instance.currentDay);
+        }
+        else
+        {
+            Debug.LogWarning("DayCounter: No GameManager instance found in scene.");
         }
     }
 
