@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: LumberjackDay1
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: Hey.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Anything I can do for ya?
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: I know how to use an axe.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: To get Firewood.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Firewood helps people stay warm in winter.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: When people are warm they work better.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: By the way, if you see the huntress let her know
+    conditions:
+    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: I said Hi.
+    conditions:
+    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  textSpeed: 0.01
+  choices: []

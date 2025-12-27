@@ -2,8 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum NPCTrait
+{
+    Lumberjack,
+    Huntress,
+    Farmer,
+    Miner
+}
+
+public enum NPCLocation
+{
+    None,
+    FarmerHouse,
+    LumberjackHouse,
+    HuntressHouse,
+    MinerHouse
+}
+
 public class NPCController : MonoBehaviour
 {
+    public List<NPCTrait> traits = new();
+
+    public bool HasTrait(NPCTrait trait)
+    {
+        return traits.Contains(trait);
+    }
+
+    public NPCLocation currentLocation = NPCLocation.None;
+
     public bool isHungry = false;
     public bool isCold = false;
     public bool hasTools = false;
@@ -20,7 +46,7 @@ public class NPCController : MonoBehaviour
             }
             else
             {
-                //kill npc
+                Destroy(gameObject);
             }
         }
 
@@ -31,6 +57,15 @@ public class NPCController : MonoBehaviour
         else
         {
             isCold = true;
+        }
+
+        if (hasEaten)
+        {
+            isHungry = false;
+        }
+        else
+        {
+            isHungry = true;
         }
 
         hasEaten = false;
@@ -54,6 +89,16 @@ public class NPCController : MonoBehaviour
         return hasWood;
     }
 
+    public void ReceiveFood()
+    {
+        hasEaten = true;
+    }
+
+    public void ReceiveWood()
+    {
+        hasWood = true;
+    }
+
     public int GetState()
     {
         if (isCold && isHungry)
@@ -69,5 +114,29 @@ public class NPCController : MonoBehaviour
             return 1;
         }
         return 0;
+    }
+
+    private void OnDestroy()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.UnregisterNPC(this);
+        }
+    }
+
+    public void SetLocation(NPCLocation newLocation)
+    {
+        currentLocation = newLocation;
+
+        if (newLocation == NPCLocation.None)
+            return;
+
+        if (GameManager.Instance != null)
+        {
+            Vector2 targetPos =
+                GameManager.Instance.GetWorldPositionForLocation(newLocation);
+
+            transform.position = targetPos;
+        }
     }
 }

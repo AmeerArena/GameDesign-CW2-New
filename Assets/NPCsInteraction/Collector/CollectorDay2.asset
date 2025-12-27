@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: CollectorDay2
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: Well hello there again
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: I hope you remember what I asked for
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: So do you have 3 firewood for me?
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Perfect
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: "I\u2019ll be seeing you tomorrow then"
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Next time I hope you can offer some food.
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: No?
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  textSpeed: 0.01
+  choices:
+  - dialogueIndex: 2
+    options:
+    - optionId: Offer_3Wood
+      text: Yes I do
+      nextDialogueIndex: 3
+      conditions:
+      - {fileID: 11400000, guid: ad3ccb1a66ddf1b4eb2997d6f8d6c140, type: 2}
+      actionType: 2
+      resource: {fileID: 11400000, guid: acd2a4abed62c4d49a9ca823a4cb4ab7, type: 2}
+      amount: 3
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Dont_Offer_3Wood
+      text: No
+      nextDialogueIndex: 6
+      conditions: []
+      actionType: 0
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: Will_Sacrifice

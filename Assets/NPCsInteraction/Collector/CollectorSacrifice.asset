@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: CollectorSacrifice
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: Well you better have something to offer
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Very well then.
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: So this is how it ends then.
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  textSpeed: 0.01
+  choices:
+  - dialogueIndex: 0
+    options:
+    - optionId: Kill_Farmer
+      text: Sacrifice Farmer
+      nextDialogueIndex: 1
+      conditions:
+      - {fileID: 11400000, guid: 68f923e4ca8a96a4c89bda613c440b4c, type: 2}
+      actionType: 4
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Kill_Lumberjack
+      text: Sacrifice Lumberjack
+      nextDialogueIndex: 1
+      conditions:
+      - {fileID: 11400000, guid: 2498b4328857ab24eb70286ecfc2ab22, type: 2}
+      actionType: 7
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Kill_Huntress
+      text: Sacrifice Huntress
+      nextDialogueIndex: 1
+      conditions:
+      - {fileID: 11400000, guid: a24c606dcf54162458aaee4a1d2f7594, type: 2}
+      actionType: 6
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Kill_Miner
+      text: Sacrifice Miner
+      nextDialogueIndex: 1
+      conditions:
+      - {fileID: 11400000, guid: 7203578a9a081484a9a323af5b18ba4c, type: 2}
+      actionType: 8
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Kill_Kid
+      text: Sacrifice Kid
+      nextDialogueIndex: 1
+      conditions:
+      - {fileID: 11400000, guid: 0a7dbafbae37df04692dbc9489ed2159, type: 2}
+      actionType: 5
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Kill_Self
+      text: Sacrifice Myself
+      nextDialogueIndex: 2
+      conditions:
+      - {fileID: 11400000, guid: be3b556806931ac43ab2ea09acc25753, type: 2}
+      actionType: 0
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 

@@ -1,11 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class InventorySystem : MonoBehaviour
 {
     [SerializeField] private int maxSlots = 16;
     [SerializeField] private Transform slotContainer;
     [SerializeField] private InventorySlot slotPrefab;
+
+    [SerializeField] private ResourceData resource; // TEMP
+    [SerializeField] private ResourceData resource2;
 
     private List<InventorySlot> slots = new();
 
@@ -17,6 +21,8 @@ public class InventorySystem : MonoBehaviour
             slot.Clear();
             slots.Add(slot);
         }
+        AddResource(resource, 3);
+        AddResource(resource2, 3);
     }
 
     public bool AddResource(ResourceData data, int amount)
@@ -46,4 +52,41 @@ public class InventorySystem : MonoBehaviour
         // Inventory full OR still leftover
         return amount <= 0;
     }
+
+    public bool HasResource(ResourceData data, int amount)
+    {
+        int total = 0;
+
+        foreach (var slot in slots)
+        {
+            if (!slot.IsEmpty && slot.Resource == data)
+            {
+                total += slot.Quantity;
+                if (total >= amount)
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool ConsumeResource(ResourceData data, int amount)
+    {
+        if (!HasResource(data, amount)) 
+            return false;
+    
+        foreach (var slot in slots)
+        {
+            if (slot.IsEmpty || slot.Resource != data) 
+                continue;
+    
+            amount = slot.RemoveFromStack(amount);
+    
+            if (amount <= 0)
+                break;
+        }
+    
+        return true;
+    }
+
 }

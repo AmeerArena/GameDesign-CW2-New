@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: HuntressDay1
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: "So you\u2019re the new mayor?"
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Hope you got more backbone than the last guy.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: "Right now you\u2019re looking at the best hunter in town."
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: So tell me when you need a job done properly.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Oh, you talked to him, that Lumberjack.
+    conditions:
+    - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: "\u2026"
+    conditions:
+    - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: "It\u2019s nothing, don't worry about it."
+    conditions:
+    - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  textSpeed: 0.01
+  choices: []

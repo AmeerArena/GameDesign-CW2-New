@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: GiveResourcesDialogue
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: ...
+    conditions: []
+    endDialogue: 0
+  - text: Bye.
+    conditions: []
+    endDialogue: 1
+  textSpeed: 0.01
+  choices:
+  - dialogueIndex: 0
+    options:
+    - optionId: Give_Wood
+      text: Give Fire Wood
+      nextDialogueIndex: 0
+      conditions:
+      - {fileID: 11400000, guid: e4bf08aa3987dca49b90e7ce3777e92c, type: 2}
+      actionType: 2
+      resource: {fileID: 11400000, guid: acd2a4abed62c4d49a9ca823a4cb4ab7, type: 2}
+      amount: 1
+      oncePerDay: 1
+      givesFood: 0
+      givesWood: 1
+    - optionId: Give_Food
+      text: Give Food
+      nextDialogueIndex: 0
+      conditions:
+      - {fileID: 11400000, guid: f6d1d8099ee70b94384bfced5ae822c6, type: 2}
+      actionType: 2
+      resource: {fileID: 11400000, guid: 4863ebb6ea9bba24faad3ee7aed75a22, type: 2}
+      amount: 1
+      oncePerDay: 1
+      givesFood: 1
+      givesWood: 0
+    - optionId: Exit
+      text: Goodbye
+      nextDialogueIndex: 1
+      conditions: []
+      actionType: 0
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      givesFood: 0
+      givesWood: 0

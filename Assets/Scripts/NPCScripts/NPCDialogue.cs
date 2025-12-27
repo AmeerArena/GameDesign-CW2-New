@@ -5,23 +5,73 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewNPCDialogue", menuName = "NPC Dialogue")]
 public class NPCDialogue : ScriptableObject
 {
-    public string npcName;
-    public Sprite npcFullSprite0;
-    public Sprite npcFullSprite1;
-    public Sprite npcFullSprite2;
-    public Sprite npcFullSprite3;
-    public string[] dialogueLines;
-    public bool[] endDialogueLines;
-    public float textSpeed = 0.05f;
+    public DialogueLine[] dialogueLines;
+    public float textSpeed = 0.01f;
     //public AudioClip sound;
 
     public DialogueChoice[] choices;
 }
 
+
+[System.Serializable]
+public class DialogueLine
+{
+    [TextArea]
+    public string text;
+
+    public DialogueCondition[] conditions; // optional
+    public bool endDialogue;
+
+    [Header("Flow Control")]
+    public bool overrideNext;
+    public int nextDialogueIndex;
+}
+
+
 [System.Serializable]
 public class DialogueChoice
 {
     public int dialogueIndex;
-    public string[] choices;
-    public int[] nextDialoguIndexes;
+    public DialogueOption[] options;
+}
+
+
+[System.Serializable]
+public class DialogueOption
+{
+    public string optionId;
+    public string text;
+    public int nextDialogueIndex;
+
+    public DialogueCondition[] conditions;
+
+    [Header("Action")]
+    public DialogueActionType actionType;
+    public ResourceData resource;
+    public int amount;
+
+    [Header("Option Rules")]
+    public bool oncePerDay;
+
+    [Header("NPC Effects")]
+    public bool food;
+    public bool wood;
+    public NPCLocation moveTargetLocation; // used for the kid to set his location
+    
+    [Header("Flag Effects")]
+    public string setFlag;
+}
+
+public enum DialogueActionType
+{
+    None,
+    AddResource,
+    ConsumeResource,
+    MoveNPC,
+    KillFarmer,
+    KillKid,
+    KillHuntress,
+    KillLumberjack,
+    KillMiner,
+    Hunt
 }

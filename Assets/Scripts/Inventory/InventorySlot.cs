@@ -45,4 +45,24 @@ public class InventorySlot : MonoBehaviour
 
         return amount - toAdd; // leftover
     }
+
+    public int RemoveFromStack(int amount)
+    {
+        if (IsEmpty) return amount;
+    
+        int toRemove = Mathf.Min(quantity, amount);
+        quantity -= toRemove;
+    
+        if (quantity <= 0)
+        {
+            Clear();
+        }
+        else
+        {
+            quantityText.text = quantity > 1 ? quantity.ToString() : "";
+        }
+    
+        return amount - toRemove; // leftover to remove
+    }
+
 }

@@ -17,6 +17,15 @@ public class DialogueController : MonoBehaviour
     public Transform choiceContainer;
     public GameObject choiceButtonPrefab;
 
+    public GameObject darkBackground;
+
+    public NPCController CurrentSpeaker { get; private set; }
+
+    public void SetCurrentSpeaker(NPCController npc)
+    {
+        CurrentSpeaker = npc;
+    }
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -31,6 +40,7 @@ public class DialogueController : MonoBehaviour
     public void SetNPCInfo(string name, Sprite sprite)
     {
         nameText.text = name;
+        npcFullImage.enabled = sprite != null;
         npcFullImage.sprite = sprite;
     }
 
@@ -50,5 +60,10 @@ public class DialogueController : MonoBehaviour
         choiceButton.GetComponent<TMP_Text>().text = choiceText;
         choiceButton.GetComponent<Button>().onClick.AddListener(onClick);
         return choiceButton;
+    }
+
+    public void ShowDarkBackground(bool show)
+    {
+        darkBackground.SetActive(show);
     }
 }
