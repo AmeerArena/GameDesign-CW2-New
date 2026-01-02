@@ -15,6 +15,8 @@ public class InventorySystem : MonoBehaviour
 
     private void Awake()
     {
+        gameObject.SetActive(true);
+
         for (int i = 0; i < maxSlots; i++)
         {
             InventorySlot slot = Instantiate(slotPrefab, slotContainer);
