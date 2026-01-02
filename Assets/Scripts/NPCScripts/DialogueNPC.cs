@@ -33,7 +33,7 @@ public class DialogueNPC : MonoBehaviour, IInteractable
     private bool isLockedDialogue;
     private bool flagChangedThisDialogue;
 
-
+    // start function
     void Start()
     {
         dialogueUI = DialogueController.Instance;
