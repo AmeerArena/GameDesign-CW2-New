@@ -294,8 +294,22 @@ public class NPC : MonoBehaviour, IInteractable
     void DisplayCurrentLine()
     {
         StopAllCoroutines();
+
+        PlayCurrentLineVoice();
+        
         StartCoroutine(TypeLine());
     }
+
+    void PlayCurrentLineVoice()
+    {
+        if (dialogueData == null) return;
+        if (dialogueIndex < 0 || dialogueIndex >= dialogueData.dialogueLines.Length) return;
+
+        var line = dialogueData.dialogueLines[dialogueIndex];
+        if (line != null && line.voiceClip != null)
+            AudioManager.Instance?.PlaySfx(line.voiceClip, 1f);
+    }
+
 
     Sprite getNPCSprite()
     {

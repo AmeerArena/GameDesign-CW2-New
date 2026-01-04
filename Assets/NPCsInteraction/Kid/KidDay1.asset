@@ -14,32 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: HELP! HELP!
+    voiceClip: {fileID: 8300000, guid: 097f632943cc84f69bb4b18bbfdb6272, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "My mum\u2026 she hasn\u2019t eaten in 2 days, and now she\u2019s not getting
       up.\r"
+    voiceClip: {fileID: 8300000, guid: cbc91de6d6b774bfeb5914b084eca014, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Will my mum be okay?
+    voiceClip: {fileID: 8300000, guid: cbc91de6d6b774bfeb5914b084eca014, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: O-okay then...
+    voiceClip: {fileID: 8300000, guid: cbc91de6d6b774bfeb5914b084eca014, type: 3}
     conditions: []
     endDialogue: 1
     overrideNext: 0
     nextDialogueIndex: 0
   - text: What? NO, MUM! YOU CAN'T LEAVE ME!
+    voiceClip: {fileID: 8300000, guid: 097f632943cc84f69bb4b18bbfdb6272, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: You can't die...
+    voiceClip: {fileID: 8300000, guid: cbc91de6d6b774bfeb5914b084eca014, type: 3}
     conditions: []
     endDialogue: 1
     overrideNext: 0
@@ -59,6 +65,7 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 0
+      setFlag: 
     - optionId: No_Shes_Dead
       text: No, She's Dead
       nextDialogueIndex: 4
@@ -70,3 +77,4 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 0
+      setFlag: 

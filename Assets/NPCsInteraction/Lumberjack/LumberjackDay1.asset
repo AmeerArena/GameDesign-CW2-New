@@ -14,42 +14,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: Hey.
+    voiceClip: {fileID: 8300000, guid: d59123d1338a343a1bf2edf2b72b780c, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Anything I can do for ya?
+    voiceClip: {fileID: 8300000, guid: 6214d4bbe7d154f6bbd62678f04020d2, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: I know how to use an axe.
+    voiceClip: {fileID: 8300000, guid: 6214d4bbe7d154f6bbd62678f04020d2, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: To get Firewood.
+    voiceClip: {fileID: 8300000, guid: 6214d4bbe7d154f6bbd62678f04020d2, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Firewood helps people stay warm in winter.
+    voiceClip: {fileID: 8300000, guid: 6214d4bbe7d154f6bbd62678f04020d2, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: When people are warm they work better.
+    voiceClip: {fileID: 8300000, guid: 6214d4bbe7d154f6bbd62678f04020d2, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: By the way, if you see the huntress let her know
+    voiceClip: {fileID: 8300000, guid: 6214d4bbe7d154f6bbd62678f04020d2, type: 3}
     conditions:
     - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: I said Hi.
+    voiceClip: {fileID: 8300000, guid: 6214d4bbe7d154f6bbd62678f04020d2, type: 3}
     conditions:
     - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
     endDialogue: 0

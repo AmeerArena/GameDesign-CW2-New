@@ -14,38 +14,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: "So you\u2019re the new mayor?"
+    voiceClip: {fileID: 8300000, guid: 9216a8dd7875a499e95d5e98aba75bec, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Hope you got more backbone than the last guy.
+    voiceClip: {fileID: 8300000, guid: b57b246898ffe4ffdbf28bbe12fd39c3, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "Right now you\u2019re looking at the best hunter in town."
+    voiceClip: {fileID: 8300000, guid: b57b246898ffe4ffdbf28bbe12fd39c3, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: So tell me when you need a job done properly.
+    voiceClip: {fileID: 8300000, guid: b57b246898ffe4ffdbf28bbe12fd39c3, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Oh, you talked to him, that Lumberjack.
+    voiceClip: {fileID: 8300000, guid: b57b246898ffe4ffdbf28bbe12fd39c3, type: 3}
     conditions:
     - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "\u2026"
+    voiceClip: {fileID: 8300000, guid: b57b246898ffe4ffdbf28bbe12fd39c3, type: 3}
     conditions:
     - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "It\u2019s nothing, don't worry about it."
+    voiceClip: {fileID: 8300000, guid: b57b246898ffe4ffdbf28bbe12fd39c3, type: 3}
     conditions:
     - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
     endDialogue: 0

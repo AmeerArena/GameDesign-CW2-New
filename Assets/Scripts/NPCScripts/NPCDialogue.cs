@@ -7,7 +7,6 @@ public class NPCDialogue : ScriptableObject
 {
     public DialogueLine[] dialogueLines;
     public float textSpeed = 0.01f;
-    //public AudioClip sound;
 
     public DialogueChoice[] choices;
 }
@@ -18,6 +17,8 @@ public class DialogueLine
 {
     [TextArea]
     public string text;
+
+    public AudioClip voiceClip;
 
     public DialogueCondition[] conditions; // optional
     public bool endDialogue;

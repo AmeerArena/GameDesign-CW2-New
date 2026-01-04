@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: where should I go?
+    voiceClip: {fileID: 8300000, guid: 94b33929e38b64defa4e4636577a76d8, type: 3}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: okay.
+    voiceClip: {fileID: 8300000, guid: 445202ed26e224858b23fd752e8f9a40, type: 3}
     conditions: []
     endDialogue: 1
     overrideNext: 0
@@ -40,6 +42,7 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 1
+      setFlag: 
     - optionId: Stay_With_Lumberjack
       text: Stay with the Lumberjack
       nextDialogueIndex: 1
@@ -53,6 +56,7 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 2
+      setFlag: 
     - optionId: Stay_With_Huntress
       text: Stay with the Huntress
       nextDialogueIndex: 1
@@ -66,6 +70,7 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 3
+      setFlag: 
     - optionId: Stay_With_Miner
       text: Stay with the Miner
       nextDialogueIndex: 1
@@ -79,3 +84,4 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 4
+      setFlag: 
