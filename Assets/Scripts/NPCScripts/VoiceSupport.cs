@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//This class is just to hold this code, put this in NPC.cs
+//This class is just to hold this code, 
 
-// void DisplayCurrentLine()
+
+// Put this in NPC.cs
+
+//     void DisplayCurrentLine()
 //     {
 //         StopAllCoroutines();
 
@@ -22,6 +25,10 @@ using UnityEngine;
 //         if (line != null && line.voiceClip != null)
 //             AudioManager.Instance?.PlaySfx(line.voiceClip, 1f);
 //     }
+
+// add to NPCDialogue.cs
+//    public AudioClip voiceClip;
+
 
 
 public class VoiceSupport : MonoBehaviour
