@@ -10,51 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
-  m_Name: LumberjackDay1
+  m_Name: MinerDay1
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: Hey.
+  - text: Mornin Boss
+    conditions:
+    - {fileID: 11400000, guid: 16d7ce6eeb8ccef4585d099f1da7e71b, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: I'm the Miner
+    conditions:
+    - {fileID: 11400000, guid: 16d7ce6eeb8ccef4585d099f1da7e71b, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: I well... Mine stuff
+    conditions:
+    - {fileID: 11400000, guid: 16d7ce6eeb8ccef4585d099f1da7e71b, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Don't worry about me making a mess
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
-  - text: Anything I can do for ya?
-    conditions:
-    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
-    endDialogue: 0
-    overrideNext: 0
-    nextDialogueIndex: 0
-  - text: I know how to use an axe.
-    conditions:
-    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
-    endDialogue: 0
-    overrideNext: 0
-    nextDialogueIndex: 0
-  - text: To get Firewood.
-    conditions:
-    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
-    endDialogue: 0
-    overrideNext: 0
-    nextDialogueIndex: 0
-  - text: Firewood helps people stay warm in winter.
+  - text: There's No way I could dig a big hole by myself
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
-  - text: When people are warm they work better.
+  - text: But you know if I had a second pair of hands I really feel like I could
+      make a whole tunnel
     conditions: []
-    endDialogue: 0
-    overrideNext: 0
-    nextDialogueIndex: 0
-  - text: By the way, if you see the huntress let her know
-    conditions:
-    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
-    endDialogue: 0
-    overrideNext: 0
-    nextDialogueIndex: 0
-  - text: I said Hi.
-    conditions:
-    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0

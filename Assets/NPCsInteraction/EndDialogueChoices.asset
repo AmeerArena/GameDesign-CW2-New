@@ -125,7 +125,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 5b33eba7b20a334459822ce57f880456, type: 2}
       actionType: 9
       resource: {fileID: 0}
-      amount: 3
+      amount: 4
       oncePerDay: 1
       food: 0
       wood: 0

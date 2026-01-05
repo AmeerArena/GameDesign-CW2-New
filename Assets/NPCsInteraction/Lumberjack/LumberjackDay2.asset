@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: LumberjackDay2
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: People in town work hard
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: But if town people cold then they can't work as hard
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: When cold people do work they are not suited for they won't be able to
+      get anything
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  textSpeed: 0.01
+  choices: []
