@@ -647,7 +647,7 @@ MonoBehaviour:
   - location: 3
     worldPosition: {x: -2, y: -11}
   - location: 4
-    worldPosition: {x: 2, y: -12}
+    worldPosition: {x: 2, y: -11}
   gameResources:
   - {fileID: 11400000, guid: 4863ebb6ea9bba24faad3ee7aed75a22, type: 2}
   - {fileID: 11400000, guid: acd2a4abed62c4d49a9ca823a4cb4ab7, type: 2}
@@ -12088,6 +12088,7 @@ MonoBehaviour:
     endAllDialogue: 0
   - conditions:
     - {fileID: 11400000, guid: b491eb2b95ef3d042b2a4267de53deaa, type: 2}
+    - {fileID: 11400000, guid: 166fe01c852fa244dadf6ea2588bd2a2, type: 2}
     dialogue: {fileID: 11400000, guid: 1601f7f55c2185c4989058c748754aba, type: 2}
     endAllDialogue: 1
   canMoveTime: 1
