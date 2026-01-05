@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Scene Objects")]
     [SerializeField] private List<DayObjectGroup> dayObjectGroups = new();
+    [SerializeField] private List<GameObject> objectsToShow = new();
     [Header("Pending Rewards")]
     private List<PendingResourceReward> pendingRewards = new();
     [Header("Pending Hunts")]
@@ -71,6 +72,11 @@ public class GameManager : MonoBehaviour
     private List<PendingNPCMove> pendingMoves = new();
     [Header("Game Resources")]
     [SerializeField] private List<ResourceData> gameResources = new();
+
+    [Header("Cave Progression")]
+    [SerializeField] private ResourceData ironResource;
+    private HashSet<NPCController> mineNPCsToday = new();
+    private int currentObjectIndex = -1;
 
 
     private void Awake()
@@ -94,6 +100,7 @@ public class GameManager : MonoBehaviour
     {
         previousScene = SceneManager.GetActiveScene().name;
         Time.timeScale = 1f;
+        SetDay(1);
         SceneManager.LoadScene(gameSceneName);
     }
 
@@ -112,6 +119,7 @@ public class GameManager : MonoBehaviour
         {
             string target = previousScene;
             previousScene = SceneManager.GetActiveScene().name;
+            SetDay(1);
             SceneManager.LoadScene(target);
         }
         else
@@ -124,6 +132,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         previousScene = SceneManager.GetActiveScene().name;
+        SetDay(1);
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
@@ -160,6 +169,9 @@ public class GameManager : MonoBehaviour
         ResolvePendingRewards();
         ResolvePendingHunts();
         ResolvePendingNPCMoves();
+
+        ResolveMineProgression();
+        mineNPCsToday.Clear();
     }
 
     void ResolveDayObjects()
@@ -177,6 +189,36 @@ public class GameManager : MonoBehaviour
     
             group.objects.Clear();
         }
+    }
+
+    void ResolveMineProgression()
+    {
+        // need Miner and Kid
+        if (mineNPCsToday.Count < 2)
+            return;
+
+        if (objectsToShow == null || objectsToShow.Count == 0)
+            return;
+
+        int nextIndex = currentObjectIndex + 1;
+
+        // No more stages
+        if (nextIndex >= objectsToShow.Count)
+            return;
+
+        // Deactivate current object
+        if (currentObjectIndex >= 0 && objectsToShow[currentObjectIndex] != null)
+        {
+            objectsToShow[currentObjectIndex].SetActive(false);
+        }
+
+        // Activate next object
+        if (objectsToShow[nextIndex] != null)
+        {
+            objectsToShow[nextIndex].SetActive(true);
+        }
+
+        currentObjectIndex = nextIndex;
     }
 
     void ResolvePendingRewards()
@@ -225,6 +267,12 @@ public class GameManager : MonoBehaviour
     {
         if (npc == null || resource == null || baseAmount <= 0)
             return;
+
+        // Track Mining
+        if (resource == ironResource)
+        {
+            mineNPCsToday.Add(npc);
+        }
 
         int finalAmount = CalculateFinalAmount(npc, resource, baseAmount);
 

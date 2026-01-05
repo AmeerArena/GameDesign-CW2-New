@@ -23,8 +23,8 @@ public class InventorySystem : MonoBehaviour
             slot.Clear();
             slots.Add(slot);
         }
-        AddResource(resource, 3);
-        AddResource(resource2, 3);
+        AddResource(resource, 90);
+        AddResource(resource2, 90);
     }
 
     public bool AddResource(ResourceData data, int amount)

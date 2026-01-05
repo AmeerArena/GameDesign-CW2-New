@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: CollectorDay4
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: Well...
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: You know how this goes now
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Do you have my 6 iron?
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Great
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Tomorrow's tribute is equal part Food and Wood.
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: No?
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  textSpeed: 0.01
+  choices:
+  - dialogueIndex: 2
+    options:
+    - optionId: Offer_6Iron
+      text: Yes I do
+      nextDialogueIndex: 3
+      conditions:
+      - {fileID: 11400000, guid: 1bc23f35d514a6241909fee22cb35635, type: 2}
+      actionType: 2
+      resource: {fileID: 11400000, guid: 3f9889a59eae30849b68764cedf09482, type: 2}
+      amount: 6
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Dont_Offer_6Iron
+      text: No
+      nextDialogueIndex: 5
+      conditions: []
+      actionType: 0
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: Will_Sacrifice

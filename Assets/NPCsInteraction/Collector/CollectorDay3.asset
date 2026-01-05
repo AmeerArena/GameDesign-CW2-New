@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: CollectorDay3
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: Hello
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: I hope you remember what I asked for
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Do you have 5 food for me?
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Good job
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Tomorrow I'll be back for Iron.
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: No?
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  textSpeed: 0.01
+  choices:
+  - dialogueIndex: 2
+    options:
+    - optionId: Offer_5Food
+      text: Yes I do
+      nextDialogueIndex: 3
+      conditions:
+      - {fileID: 11400000, guid: 87b303d0d7e7a094a93234a9061ebca7, type: 2}
+      actionType: 2
+      resource: {fileID: 11400000, guid: 4863ebb6ea9bba24faad3ee7aed75a22, type: 2}
+      amount: 5
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Dont_Offer_5Food
+      text: No
+      nextDialogueIndex: 5
+      conditions: []
+      actionType: 0
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: Will_Sacrifice
