@@ -26,14 +26,24 @@ MonoBehaviour:
     overrideNext: 0
     nextDialogueIndex: 0
   - text: I know how to use an axe.
+<<<<<<< HEAD
     voiceClip: {fileID: 0}
     conditions: []
+=======
+    conditions:
+    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
+>>>>>>> main
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: To get Firewood.
+<<<<<<< HEAD
     voiceClip: {fileID: 0}
     conditions: []
+=======
+    conditions:
+    - {fileID: 11400000, guid: 631fbfeac632def4a833e57dc07e99ab, type: 2}
+>>>>>>> main
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0

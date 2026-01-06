@@ -28,6 +28,11 @@ MonoBehaviour:
     endDialogue: 1
     overrideNext: 0
     nextDialogueIndex: 0
+  - text: So this is how it ends then.
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
   textSpeed: 0.01
   choices:
   - dialogueIndex: 0
@@ -109,4 +114,4 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 0
-      setFlag: 
+      setFlag: PlayerDead

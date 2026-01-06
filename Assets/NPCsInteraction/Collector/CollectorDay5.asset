@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
+  m_Name: CollectorDay5
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: Give me the tribute
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: 4 Food and 4 Wood.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: You have served me well.
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Keep it up
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: No?
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  textSpeed: 0.01
+  choices:
+  - dialogueIndex: 1
+    options:
+    - optionId: Offer_4f4w
+      text: Yes I do
+      nextDialogueIndex: 2
+      conditions:
+      - {fileID: 11400000, guid: e92154aabf9b9a5429460eb17685aa35, type: 2}
+      - {fileID: 11400000, guid: f3ff75e041a275241ab262dcda6befb8, type: 2}
+      actionType: 0
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: 
+    - optionId: Dont_Offer_4f4w
+      text: No
+      nextDialogueIndex: 4
+      conditions: []
+      actionType: 0
+      resource: {fileID: 0}
+      amount: 0
+      oncePerDay: 0
+      food: 0
+      wood: 0
+      moveTargetLocation: 0
+      setFlag: Will_Sacrifice

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5061755018d99429743287745c7d98, type: 3}
+  m_Name: EveryoneAlive
+  m_EditorClassIdentifier: 
+  conditions:
+  - {fileID: 11400000, guid: 68f923e4ca8a96a4c89bda613c440b4c, type: 2}
+  - {fileID: 11400000, guid: a24c606dcf54162458aaee4a1d2f7594, type: 2}
+  - {fileID: 11400000, guid: 0a7dbafbae37df04692dbc9489ed2159, type: 2}
+  - {fileID: 11400000, guid: 2498b4328857ab24eb70286ecfc2ab22, type: 2}
+  - {fileID: 11400000, guid: 7203578a9a081484a9a323af5b18ba4c, type: 2}

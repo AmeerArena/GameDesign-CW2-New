@@ -154,6 +154,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: fae694af12f14ab459d1d17b1f17ee9a, type: 2}
     dialogue: {fileID: 11400000, guid: d32776c570c19a44981fe3177e19040e, type: 2}
     endAllDialogue: 0
+  - conditions:
+    - {fileID: 11400000, guid: b08f0815806f37e429c6c12bd2548869, type: 2}
+    dialogue: {fileID: 11400000, guid: a6f3cab8c593d304c95fc9e64246cc5e, type: 2}
+    endAllDialogue: 0
   - conditions: []
     dialogue: {fileID: 11400000, guid: 2ac3995b80e5ca14b84e70cc0ba101a5, type: 2}
     endAllDialogue: 1

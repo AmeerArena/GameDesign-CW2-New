@@ -19,12 +19,17 @@ MonoBehaviour:
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
+<<<<<<< HEAD
   - text: Ohh! The new mayor, well it's great to meet you!
     voiceClip: {fileID: 0}
+=======
+  - text: There's No way I could dig a big hole by myself
+>>>>>>> main
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
+<<<<<<< HEAD
   - text: Me? I don't do much I guess, I just mine.
     voiceClip: {fileID: 0}
     conditions: []
@@ -34,6 +39,10 @@ MonoBehaviour:
   - text: 'Here''s an ingot, you can give this to any townsperson to double their
       production for that day. '
     voiceClip: {fileID: 0}
+=======
+  - text: But you know if I had a second pair of hands I really feel like I could
+      make a whole tunnel
+>>>>>>> main
     conditions: []
     endDialogue: 0
     overrideNext: 0

@@ -163,7 +163,7 @@ MonoBehaviour:
     endAllDialogue: 0
   - conditions:
     - {fileID: 11400000, guid: db6db2edf04f3dd44b2ccb83b4c490e6, type: 2}
-    dialogue: {fileID: 11400000, guid: 2ac3995b80e5ca14b84e70cc0ba101a5, type: 2}
+    dialogue: {fileID: 11400000, guid: 47b08d23b3e81b14c8afc5839ffe12f3, type: 2}
     endAllDialogue: 1
 --- !u!114 &5614102614695132383
 MonoBehaviour:

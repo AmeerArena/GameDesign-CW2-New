@@ -33,7 +33,14 @@ public class DialogueNPC : MonoBehaviour, IInteractable
     private bool isLockedDialogue;
     private bool flagChangedThisDialogue;
 
+    [Header("Ending Npc Settings")]
+    [SerializeField] private bool isEndingNPC = false;
+    [SerializeField] private int endingDay = 6;
+    [SerializeField] private List<DialogueEndingRoute> endingRoutes = new();
+    [SerializeField] private string defaultEnding;
+    [SerializeField] private string deadPlayerEnding;
 
+    // start function
     void Start()
     {
         dialogueUI = DialogueController.Instance;
@@ -397,9 +404,42 @@ public class DialogueNPC : MonoBehaviour, IInteractable
         PauseController.SetPause(false, false);
         PauseController.EscapeBlocked = false;
 
+        // Do ending if available
+        TryTriggerEnding();
+
         // Reset for next interaction
         activeDialogues.Clear();
         currentDialogueStateIndex = 0;
+    }
+
+    void TryTriggerEnding()
+    {
+        if (!isEndingNPC)
+            return;
+
+        if (GameState.Instance.IsDialogueFlagSet("PlayerDead"))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(deadPlayerEnding);
+            return;
+        }
+
+        if (GameManager.Instance.currentDay < endingDay)
+            return;
+
+        // Check routes in order
+        foreach (var route in endingRoutes)
+        {
+            if (route.condition != null && route.condition.IsMet())
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(route.sceneName);
+                return;
+            }
+        }
+
+        if (!string.IsNullOrEmpty(defaultEnding))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(defaultEnding);
+        }
     }
 }
 

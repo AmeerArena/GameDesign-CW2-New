@@ -10,14 +10,20 @@ EditorBuildSettings:
     guid: ec51496b257a740b3872b0303d4f12ce
   - enabled: 1
     path: Assets/Scenes/SettingsScene.unity
-    guid: a3534a824ad1641c3b7af7c288bab8c6
+    guid: b6f76bb6bbdfb452bbbeaca01658eb06
   - enabled: 1
     path: Assets/Scenes/TiledScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/NightScene.unity
-    guid: 084d20e5f0eb544839c6061340f6bc85
-  - enabled: 1
-    path: Assets/Scenes/GameOverScene.unity
+    path: Assets/Scenes/Ending_Alone.unity
     guid: 72958d72d9c69534c8b9b0fce90349d7
+  - enabled: 1
+    path: Assets/Scenes/Ending_Survivors.unity
+    guid: e4fcfbc1b500202409aaf15cb3ed1127
+  - enabled: 1
+    path: Assets/Scenes/Ending_Town.unity
+    guid: 5df278405a0052044a17cc8f321d1a02
+  - enabled: 1
+    path: Assets/Scenes/Ending_Dead.unity
+    guid: c2b1bb704284fe44e8be0466cbe9550b
   m_configObjects: {}

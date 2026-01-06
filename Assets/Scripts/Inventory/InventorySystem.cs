@@ -15,14 +15,16 @@ public class InventorySystem : MonoBehaviour
 
     private void Awake()
     {
+        gameObject.SetActive(true);
+
         for (int i = 0; i < maxSlots; i++)
         {
             InventorySlot slot = Instantiate(slotPrefab, slotContainer);
             slot.Clear();
             slots.Add(slot);
         }
-        AddResource(resource, 3);
-        AddResource(resource2, 3);
+        AddResource(resource, 90);
+        AddResource(resource2, 90);
     }
 
     public bool AddResource(ResourceData data, int amount)

@@ -20,8 +20,13 @@ MonoBehaviour:
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Hope you got more backbone than the last guy.
+<<<<<<< HEAD
     voiceClip: {fileID: 0}
     conditions: []
+=======
+    conditions:
+    - {fileID: 11400000, guid: b3d9849fc3423bd4ab12c93f9df9c4cc, type: 2}
+>>>>>>> main
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
