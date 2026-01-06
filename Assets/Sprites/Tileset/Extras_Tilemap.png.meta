@@ -218,7 +218,7 @@ TextureImporter:
       name: Extras_Tilemap_5
       rect:
         serializedVersion: 2
-        x: 0
+        x: 400
         y: 400
         width: 200
         height: 200
@@ -239,7 +239,7 @@ TextureImporter:
       name: Extras_Tilemap_6
       rect:
         serializedVersion: 2
-        x: 200
+        x: 600
         y: 400
         width: 200
         height: 200
@@ -260,7 +260,7 @@ TextureImporter:
       name: Extras_Tilemap_7
       rect:
         serializedVersion: 2
-        x: 400
+        x: 800
         y: 400
         width: 200
         height: 200
@@ -282,7 +282,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 600
-        y: 400
+        y: 200
         width: 200
         height: 200
       alignment: 0
@@ -302,8 +302,8 @@ TextureImporter:
       name: Extras_Tilemap_9
       rect:
         serializedVersion: 2
-        x: 800
-        y: 400
+        x: 600
+        y: 0
         width: 200
         height: 200
       alignment: 0
@@ -323,111 +323,6 @@ TextureImporter:
       name: Extras_Tilemap_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 200
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99b6099d827ce9146abd14ff53732dbd
-      internalID: 1934291286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Extras_Tilemap_11
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 200
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42c072df7d1589c43ba45494ef119cfc
-      internalID: 462615290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Extras_Tilemap_12
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 200
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 682edd380934fc9478f56be3bff03d1c
-      internalID: -1366536394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Extras_Tilemap_13
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ac73d76713dbf44fa5415beb89df90c
-      internalID: -1834967492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Extras_Tilemap_14
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 064b6439effb25f4e8c8b6a06572c58c
-      internalID: 1593535038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Extras_Tilemap_15
-      rect:
-        serializedVersion: 2
         x: 800
         y: 0
         width: 200
@@ -439,8 +334,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f7bc883046df274b8876d64bbee4026
-      internalID: 1832198597
+      spriteID: 99b6099d827ce9146abd14ff53732dbd
+      internalID: 1934291286
       vertices: []
       indices: 
       edges: []
@@ -459,11 +354,6 @@ TextureImporter:
       Extras_Tilemap_0: -194713069
       Extras_Tilemap_1: -1467338055
       Extras_Tilemap_10: 1934291286
-      Extras_Tilemap_11: 462615290
-      Extras_Tilemap_12: -1366536394
-      Extras_Tilemap_13: -1834967492
-      Extras_Tilemap_14: 1593535038
-      Extras_Tilemap_15: 1832198597
       Extras_Tilemap_2: 17964958
       Extras_Tilemap_3: 731368432
       Extras_Tilemap_4: 16614425

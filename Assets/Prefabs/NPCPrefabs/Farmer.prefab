@@ -176,4 +176,3 @@ MonoBehaviour:
   hasTools: 0
   hasEaten: 0
   hasWood: 0
-  deadBodyPrefab: {fileID: 2312438343009154117, guid: c3107d1cab90f5b44bad45afc4080fa1, type: 3}
