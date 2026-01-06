@@ -110,8 +110,6 @@ public class GameManager : MonoBehaviour
             inventory.ResetInventory();
         }
         SceneManager.LoadScene(gameSceneName);
-
-        npcs = new List<NPCController>(FindObjectsOfType<NPCController>(true));
         
     }
 
@@ -462,8 +460,27 @@ public class GameManager : MonoBehaviour
     {
         if (scene.name != gameSceneName) return;
 
-        npcs = new List<NPCController>(FindObjectsOfType<NPCController>(true));
-        Debug.Log($"SceneLoaded: repopulated npcs={npcs.Count} in {scene.name}");
+        GameManagerRefs refs = FindObjectOfType<GameManagerRefs>(true);
+        if (refs == null)
+        {
+            Debug.LogWarning("GameManagerRefs not found in TiledScene. Scene references not wired.");
+            npcs = new List<NPCController>(FindObjectsOfType<NPCController>(true));
+            return;
+        }
+
+        dayCounter = refs.dayCounter;
+        dayObjectGroups = refs.dayObjectGroups;
+        objectsToShow = refs.objectsToShow;
+        npcLocationPositions = refs.npcLocationPositions;
+        gameResources = refs.gameResources;
+        ironResource = refs.ironResource;
+
+        if (refs.npcs != null && refs.npcs.Count > 0)
+            npcs = refs.npcs;
+        else
+            npcs = new List<NPCController>(FindObjectsOfType<NPCController>(true));
+
+        Debug.Log($"SceneLoaded: wired refs. npcs={npcs.Count}, dayGroups={dayObjectGroups.Count}, objectsToShow={objectsToShow.Count}");
     }
 
 
