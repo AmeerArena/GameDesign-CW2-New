@@ -273,10 +273,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1510758903}
     m_Modifications:
+    - target: {fileID: 327724503976965558, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
+      propertyPath: m_text
+      value: Resume
+      objectReference: {fileID: 0}
     - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 639907049}
+    - target: {fileID: 982281031301174180, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 3421161437697555506, guid: a67709630ec1e41e1a6e8b333ba78a53, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1329,6 +1337,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6157281834541688724, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
+      propertyPath: typingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c679ef26db77d40fbb5e46027643a635, type: 3}
+    - target: {fileID: 6157281834541688724, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
+      propertyPath: farewellSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b14e0f628651d469c920f6058f16a0c4, type: 3}
+    - target: {fileID: 6157281834541688724, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
+      propertyPath: greetingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d59123d1338a343a1bf2edf2b72b780c, type: 3}
     - target: {fileID: 6157281834541688724, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
       propertyPath: dialogueStates.Array.data[1].dialogue
       value: 
@@ -11633,10 +11653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bcff37abc2144a7199ecddeab4b16cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 66442208}
-  dialoguePanel: {fileID: 1867978690}
-  pausePanel: {fileID: 1510758902}
-  darkBackground: {fileID: 2009570984}
 --- !u!1 &1112763827
 GameObject:
   m_ObjectHideFlags: 0
@@ -11944,6 +11960,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1864155887033115989, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
+      propertyPath: typingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7be8978bc448f4beda387bebb349d411, type: 3}
+    - target: {fileID: 1864155887033115989, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
+      propertyPath: farewellSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f2aabad094404fa3a9e3a5def053cef, type: 3}
+    - target: {fileID: 1864155887033115989, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
+      propertyPath: greetingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5dd60637939624128a13a2227aae474f, type: 3}
     - target: {fileID: 1864155887033115989, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
       propertyPath: dialogueStates.Array.size
       value: 2
@@ -12809,8 +12837,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1422409954}
   - component: {fileID: 1422409953}
-  - component: {fileID: 1422409955}
-  - component: {fileID: 1422409956}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -12830,7 +12856,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3095e0d82d77e46c798fa1eded1906ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxSource: {fileID: 1422409955}
+  dontDestroyOnLoad: 1
+  masterMixer: {fileID: 0}
+  masterVolParam: MasterVol
+  musicVolParam: MusicVol
+  sfxVolParam: SfxVol
+  voiceVolParam: VoiceVol
+  uiVolParam: UiVol
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  voiceSource: {fileID: 0}
+  uiSource: {fileID: 0}
 --- !u!4 &1422409954
 Transform:
   m_ObjectHideFlags: 0
@@ -12846,115 +12882,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1422409955
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422409952}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1422409956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422409952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd40c949482d146349f5dc1eca9ee123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 65d0c9e10bdd34cd8b2b25c62bb59037, type: 3}
 --- !u!1 &1510758902
 GameObject:
   m_ObjectHideFlags: 0
@@ -18549,6 +18476,18 @@ PrefabInstance:
       value: Huntress
       objectReference: {fileID: 0}
     - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: typingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b70f4ce4a9c146d4b8e23e8abb2e0b1, type: 3}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: farewellSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e8e49a9fe51a24e42ba85f373632f5ec, type: 3}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: greetingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9216a8dd7875a499e95d5e98aba75bec, type: 3}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
       propertyPath: dialogueStates.Array.data[1].dialogue
       value: 
       objectReference: {fileID: 11400000, guid: 7183770195fe6455680a29930fd5d31e, type: 2}
@@ -18609,6 +18548,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kid
       objectReference: {fileID: 0}
+    - target: {fileID: 5797567810191104230, guid: e58876f72995fda4d9e8199b0643b6b8, type: 3}
+      propertyPath: typingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 605b64251f8744e45b1d6964ad3748bc, type: 3}
+    - target: {fileID: 5797567810191104230, guid: e58876f72995fda4d9e8199b0643b6b8, type: 3}
+      propertyPath: farewellSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 74dd6417ed9434b56aa302e7548d321d, type: 3}
+    - target: {fileID: 5797567810191104230, guid: e58876f72995fda4d9e8199b0643b6b8, type: 3}
+      propertyPath: greetingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 526ac2e04f31a46dba350bbee36d6f65, type: 3}
     - target: {fileID: 6824577550787897867, guid: e58876f72995fda4d9e8199b0643b6b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.47
@@ -18662,6 +18613,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3324230427307948217, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: queryClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ca8a7b2a5f58345ffb8f4b3e661848af, type: 3}
+    - target: {fileID: 3324230427307948217, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: typingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d060ed423b7e14711a371be99e382e52, type: 3}
+    - target: {fileID: 3324230427307948217, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: farewellClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 65d0c9e10bdd34cd8b2b25c62bb59037, type: 3}
+    - target: {fileID: 3324230427307948217, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: greetingClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ca581e5b5f1b40458d29752054ed732, type: 3}
+    - target: {fileID: 3324230427307948217, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: farewellSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 65d0c9e10bdd34cd8b2b25c62bb59037, type: 3}
+    - target: {fileID: 3324230427307948217, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: greetingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ca581e5b5f1b40458d29752054ed732, type: 3}
+    - target: {fileID: 3324230427307948217, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: typingSoundInterval
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 3324230427307948217, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
       propertyPath: dialogueStates.Array.data[1].dialogue
       value: 

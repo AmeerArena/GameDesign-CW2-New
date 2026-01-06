@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: HELP! HELP!
-    voiceClip: {fileID: 8300000, guid: 097f632943cc84f69bb4b18bbfdb6272, type: 3}
+    voiceClip: {fileID: 0}
     conditions: []
     endDialogue: 0
     overrideNext: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Will my mum be okay?
-    voiceClip: {fileID: 8300000, guid: cbc91de6d6b774bfeb5914b084eca014, type: 3}
+    voiceClip: {fileID: 0}
     conditions: []
     endDialogue: 0
     overrideNext: 0

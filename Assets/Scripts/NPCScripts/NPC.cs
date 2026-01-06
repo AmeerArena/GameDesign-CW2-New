@@ -11,8 +11,18 @@ public class NPC : MonoBehaviour, IInteractable
     public Sprite npcFullSprite1;
     public Sprite npcFullSprite2;
     public Sprite npcFullSprite3;
+
     [Header("Dialogue States (Top = Highest Priority)")]
     public DialogueState[] dialogueStates;
+
+    [Header("Audio Clips")]
+    public AudioClip greetingSound;
+    public AudioClip farewellSound;
+    [Header("Typing Sound")]
+    public AudioClip typingSound;
+    public float typingSoundInterval = 0.05f;
+
+    private float lastTypingSoundTime;
 
     private List<NPCDialogue> activeDialogues = new();
     private int currentDialogueStateIndex;
@@ -58,6 +68,7 @@ public class NPC : MonoBehaviour, IInteractable
                 return;
 
             StartDialogue();
+            PlayGreetingVoice();
         }
         else
         {
@@ -179,6 +190,7 @@ public class NPC : MonoBehaviour, IInteractable
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex].text)
         {
             dialogueUI.SetDialogueText(dialogueUI.dialogueText.text + letter);
+            TryPlayTypingSound(letter);
             yield return new WaitForSecondsRealtime(dialogueData.textSpeed);
         }
 
@@ -307,7 +319,35 @@ public class NPC : MonoBehaviour, IInteractable
 
         var line = dialogueData.dialogueLines[dialogueIndex];
         if (line != null && line.voiceClip != null)
-            AudioManager.Instance?.PlaySfx(line.voiceClip, 1f);
+            AudioManager.Instance?.PlayVoice(line.voiceClip, 1f);
+    }
+
+    void PlayGreetingVoice()
+    {
+        if (greetingSound != null)
+            AudioManager.Instance?.PlayVoice(greetingSound, 1f);
+    }
+
+    void PlayFarewellVoice()
+    {
+        if (farewellSound != null)
+            AudioManager.Instance?.PlayVoice(farewellSound, 1f);
+    }
+
+    void TryPlayTypingSound(char letter)
+    {
+        if (typingSound == null) return;
+
+        // Skip spaces & punctuation
+        if (char.IsWhiteSpace(letter) || char.IsPunctuation(letter))
+            return;
+
+        // Throttle sound rate
+        if (Time.unscaledTime - lastTypingSoundTime < typingSoundInterval)
+            return;
+
+        lastTypingSoundTime = Time.unscaledTime;
+        AudioManager.Instance?.PlayUISfx(typingSound, 0.2f);
     }
 
 
@@ -358,6 +398,7 @@ public class NPC : MonoBehaviour, IInteractable
         }
 
         // End dialogue completely
+        PlayFarewellVoice();
         isDialogueActive = false;
         dialogueUI.SetDialogueText("");
         dialogueUI.ShowDialogueUI(false);

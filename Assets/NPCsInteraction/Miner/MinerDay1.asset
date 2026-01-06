@@ -14,26 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: Yo! Um... Who are you again?
-    voiceClip: {fileID: 8300000, guid: 5dd60637939624128a13a2227aae474f, type: 3}
+    voiceClip: {fileID: 0}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Ohh! The new mayor, well it's great to meet you!
-    voiceClip: {fileID: 8300000, guid: acfad739cb54742dda7e243af9c84e1e, type: 3}
+    voiceClip: {fileID: 0}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Me? I don't do much I guess, I just mine.
-    voiceClip: {fileID: 8300000, guid: acfad739cb54742dda7e243af9c84e1e, type: 3}
+    voiceClip: {fileID: 0}
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: 'Here''s an ingot, you can give this to any townsperson to double their
       production for that day. '
-    voiceClip: {fileID: 8300000, guid: 610fbe86022b341c9b5e85e9f8157d27, type: 3}
+    voiceClip: {fileID: 0}
     conditions: []
     endDialogue: 0
     overrideNext: 0
