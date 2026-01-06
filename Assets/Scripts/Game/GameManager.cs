@@ -415,6 +415,8 @@ public class GameManager : MonoBehaviour
         if (npc == null)
             return;
 
+        //GameObject corpse = Instantiate(npc.deadBodyPrefab);
+        //corpse.transform.position = npc.gameObject.transform.position;
         Destroy(npc.gameObject);
     }
 }

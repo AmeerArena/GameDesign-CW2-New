@@ -36,6 +36,8 @@ public class NPCController : MonoBehaviour
     public bool hasEaten = false;
     public bool hasWood = false;
 
+    [SerializeField] public GameObject deadBodyPrefab;
+
     public void DayReset()
     {
         if (isHungry)
@@ -46,6 +48,8 @@ public class NPCController : MonoBehaviour
             }
             else
             {
+                GameObject corpse = Instantiate(deadBodyPrefab);
+                corpse.transform.position = gameObject.transform.position;
                 Destroy(gameObject);
             }
         }
