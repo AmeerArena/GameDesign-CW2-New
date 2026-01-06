@@ -63,12 +63,4 @@ public class GameState : MonoBehaviour
     {
         dialogueFlags.Remove(flagName);
     }
-
-    public void ResetAllData()
-    {
-        talkedToNPCs.Clear();
-        usedDialogueOptions.Clear();
-        dialogueFlags.Clear();
-    }
-
 }

@@ -23,19 +23,8 @@ public class InventorySystem : MonoBehaviour
             slot.Clear();
             slots.Add(slot);
         }
-        ResetInventory();
-    }
-
-    public void ResetInventory()
-    {
-        foreach (var slot in slots)
-        {
-            slot.Clear();
-        }
-
         AddResource(resource, 90);
         AddResource(resource2, 90);
-        return;
     }
 
     public bool AddResource(ResourceData data, int amount)

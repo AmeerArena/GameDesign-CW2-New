@@ -2,22 +2,13 @@ using UnityEngine;
 
 public class GameBootstrap : MonoBehaviour
 {
-    [Header("Manager Prefabs")]
-    [SerializeField] private GameObject gameManagerPrefab;
-    [SerializeField] private GameObject audioManagerPrefab;
+    public GameObject gameManagerPrefab;
 
     private void Awake()
     {
-        if (GameManager.Instance == null && gameManagerPrefab != null)
+        if (GameManager.Instance == null)
         {
             Instantiate(gameManagerPrefab);
         }
-
-        if (AudioManager.Instance == null && audioManagerPrefab != null)
-        {
-            Instantiate(audioManagerPrefab);
-        }
-
-        Destroy(gameObject);
     }
 }
