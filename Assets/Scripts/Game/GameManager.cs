@@ -100,8 +100,19 @@ public class GameManager : MonoBehaviour
     {
         previousScene = SceneManager.GetActiveScene().name;
         Time.timeScale = 1f;
+
+        ResetRunState();
         SetDay(1);
+
+        InventorySystem inventory = FindObjectOfType<InventorySystem>();
+        if (inventory != null)
+        {
+            inventory.ResetInventory();
+        }
         SceneManager.LoadScene(gameSceneName);
+
+        npcs = new List<NPCController>(FindObjectsOfType<NPCController>(true));
+        
     }
 
     public void LoadSettings()
@@ -419,4 +430,41 @@ public class GameManager : MonoBehaviour
         //corpse.transform.position = npc.gameObject.transform.position;
         Destroy(npc.gameObject);
     }
+
+    private void ResetRunState()
+    {
+        pendingRewards.Clear();
+        pendingHunts.Clear();
+        pendingMoves.Clear();
+
+        mineNPCsToday.Clear();
+        currentObjectIndex = -1;
+
+        npcs.Clear();
+
+        foreach (var group in dayObjectGroups)
+        {
+            group.objects.Clear();
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != gameSceneName) return;
+
+        npcs = new List<NPCController>(FindObjectsOfType<NPCController>(true));
+        Debug.Log($"SceneLoaded: repopulated npcs={npcs.Count} in {scene.name}");
+    }
+
+
 }
