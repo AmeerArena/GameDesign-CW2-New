@@ -145,6 +145,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcId: Dead Woman
   portrait: {fileID: 0}
+  collectorVoice: {fileID: 0}
+  typingSound: {fileID: 8300000, guid: d060ed423b7e14711a371be99e382e52, type: 3}
+  typingVolume: 0.5
+  typingSoundInterval: 0.07
   dialogueStates:
   - conditions: []
     dialogue: {fileID: 11400000, guid: bad21103ba4a21d4ba0cba91fe9758ea, type: 2}
@@ -154,3 +158,8 @@ MonoBehaviour:
   hasDarkBackground: 0
   interactionConditions: []
   lockedDialogue: {fileID: 0}
+  isEndingNPC: 0
+  endingDay: 6
+  endingRoutes: []
+  defaultEnding: 
+  deadPlayerEnding: 
