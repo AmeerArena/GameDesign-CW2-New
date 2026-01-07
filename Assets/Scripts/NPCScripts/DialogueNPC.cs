@@ -105,6 +105,7 @@ public class DialogueNPC : MonoBehaviour, IInteractable
             if (hasDarkBackground)
             {
                 dialogueUI.ShowDarkBackground(true);
+                AudioManager.Instance?.PlayNightMusic();
             }
         }
 
@@ -399,6 +400,7 @@ public class DialogueNPC : MonoBehaviour, IInteractable
         dialogueUI.SetDialogueText("");
         dialogueUI.ShowDialogueUI(false);
         dialogueUI.ShowDarkBackground(false);
+        AudioManager.Instance?.PlayDayMusic();
         GameState.Instance.MarkNPCTalked(npcId);
         GameState.Instance.ClearDialogueFlag("Will_Sacrifice");
         PauseController.SetPause(false, false);

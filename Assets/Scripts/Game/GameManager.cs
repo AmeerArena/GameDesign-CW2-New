@@ -434,16 +434,11 @@ public class GameManager : MonoBehaviour
         pendingRewards.Clear();
         pendingHunts.Clear();
         pendingMoves.Clear();
-
         mineNPCsToday.Clear();
         currentObjectIndex = -1;
 
         npcs.Clear();
 
-        foreach (var group in dayObjectGroups)
-        {
-            group.objects.Clear();
-        }
     }
 
     private void OnEnable()
@@ -458,6 +453,22 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Music
+        if (AudioManager.Instance != null)
+        {
+            if (scene.name == mainMenuSceneName || scene.name == settingsSceneName)
+            {
+                AudioManager.Instance.PlayMenuMusic();
+            }
+            else if (scene.name == gameSceneName)
+            {
+                AudioManager.Instance.PlayDayMusic();
+            }
+            // else: do nothing (keeps current music)
+        }
+
+
+
         if (scene.name != gameSceneName) return;
 
         GameManagerRefs refs = FindObjectOfType<GameManagerRefs>(true);

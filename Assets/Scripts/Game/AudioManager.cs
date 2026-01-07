@@ -7,6 +7,11 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private bool dontDestroyOnLoad = true;
 
+    [Header("Music")]
+    [SerializeField] private AudioClip menuMusic;
+    [SerializeField] private AudioClip tiledDayMusic;
+    [SerializeField] private AudioClip tiledNightMusic;
+
     [Header("Optional Mixer")]
     [SerializeField] private AudioMixer masterMixer;
     [SerializeField] private string masterVolParam = "MasterVol";
@@ -86,6 +91,21 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
+    public void PlayMenuMusic(float volume = 1f)
+    {
+        PlayMusic(menuMusic, volume);
+    }
+
+    public void PlayDayMusic(float volume = 1f)
+    {
+        PlayMusic(tiledDayMusic, volume);
+    }
+
+    public void PlayNightMusic(float volume = 1f)
+    {
+        PlayMusic(tiledNightMusic, volume);
+    }
+
     public void StopMusic()
     {
         if (musicSource == null) return;
@@ -96,6 +116,12 @@ public class AudioManager : MonoBehaviour
     public void FadeMusicTo(float targetVolume, float duration)
     {
         if (musicSource == null) return;
+
+        if (duration <= 0f)
+        {
+            musicSource.volume = Mathf.Clamp01(targetVolume);
+            return;
+        }
         StopAllCoroutines();
         StartCoroutine(FadeRoutine(musicSource, Mathf.Clamp01(targetVolume), duration));
     }
