@@ -1606,10 +1606,10 @@ MonoBehaviour:
   musicSlider: {fileID: 1496839750}
   sfxSlider: {fileID: 1053897887}
   voiceSlider: {fileID: 756985284}
-  masterDefault: 0.5
-  musicDefault: 0.5
-  sfxDefault: 0.5
-  voiceDefault: 0.5
+  masterDefault: 1
+  musicDefault: 1
+  sfxDefault: 1
+  voiceDefault: 1
 --- !u!1 &488769536
 GameObject:
   m_ObjectHideFlags: 0
