@@ -813,7 +813,7 @@ Transform:
   m_GameObject: {fileID: 336134635}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1184,7 +1184,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.1, y: 0.58, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1500,6 +1500,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4741978567301711964, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
+      propertyPath: npcLoot.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741978567301711964, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
+      propertyPath: npcLoot.Array.data[0]
+      value: 
+      objectReference: {fileID: 8516137701223499784, guid: 37e3b9aeb7384764a884f4a7910f032f, type: 3}
+    - target: {fileID: 4741978567301711964, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
+      propertyPath: npcLoot.Array.data[1]
+      value: 
+      objectReference: {fileID: 8516137701223499784, guid: 37e3b9aeb7384764a884f4a7910f032f, type: 3}
+    - target: {fileID: 4741978567301711964, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
+      propertyPath: npcLoot.Array.data[2]
+      value: 
+      objectReference: {fileID: 8516137701223499784, guid: 37e3b9aeb7384764a884f4a7910f032f, type: 3}
+    - target: {fileID: 4741978567301711964, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
+      propertyPath: npcLoot.Array.data[3]
+      value: 
+      objectReference: {fileID: 2493006076219882091, guid: 39b21d9c97f0b4e4bbd3d26cf84fef09, type: 3}
     - target: {fileID: 5766196007229626103, guid: 256b2c5cb8b2dcd4db908203bf7420bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.28
@@ -12321,6 +12341,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Miner
       objectReference: {fileID: 0}
+    - target: {fileID: 8316034818026291193, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
+      propertyPath: npcLoot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316034818026291193, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
+      propertyPath: npcLoot.Array.data[0]
+      value: 
+      objectReference: {fileID: 4324876014311314140, guid: 240958051dc2f0e4387f2f82a513a688, type: 3}
+    - target: {fileID: 8316034818026291193, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
+      propertyPath: npcLoot.Array.data[1]
+      value: 
+      objectReference: {fileID: 4324876014311314140, guid: 240958051dc2f0e4387f2f82a513a688, type: 3}
+    - target: {fileID: 8316034818026291193, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
+      propertyPath: npcLoot.Array.data[2]
+      value: 
+      objectReference: {fileID: 4324876014311314140, guid: 240958051dc2f0e4387f2f82a513a688, type: 3}
+    - target: {fileID: 8316034818026291193, guid: a3f3e03ce5321f4449d94bee4abb830d, type: 3}
+      propertyPath: npcLoot.Array.data[3]
+      value: 
+      objectReference: {fileID: 4324876014311314140, guid: 240958051dc2f0e4387f2f82a513a688, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18025,7 +18065,7 @@ Transform:
   m_GameObject: {fileID: 1548004953}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.1, y: 0.58, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19459,6 +19499,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7472170855424471827, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: npcLoot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472170855424471827, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: npcLoot.Array.data[0]
+      value: 
+      objectReference: {fileID: 6771642224147962450, guid: 34d194a5df63eac419ae8bcefc4aaf9c, type: 3}
+    - target: {fileID: 7472170855424471827, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: npcLoot.Array.data[1]
+      value: 
+      objectReference: {fileID: 4324876014311314140, guid: 240958051dc2f0e4387f2f82a513a688, type: 3}
+    - target: {fileID: 7472170855424471827, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: npcLoot.Array.data[2]
+      value: 
+      objectReference: {fileID: 8516137701223499784, guid: 37e3b9aeb7384764a884f4a7910f032f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19613,6 +19669,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6943246695591267980, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: npcLoot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943246695591267980, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: npcLoot.Array.data[0]
+      value: 
+      objectReference: {fileID: 6771642224147962450, guid: 34d194a5df63eac419ae8bcefc4aaf9c, type: 3}
+    - target: {fileID: 6943246695591267980, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: npcLoot.Array.data[1]
+      value: 
+      objectReference: {fileID: 6771642224147962450, guid: 34d194a5df63eac419ae8bcefc4aaf9c, type: 3}
+    - target: {fileID: 6943246695591267980, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: npcLoot.Array.data[2]
+      value: 
+      objectReference: {fileID: 6771642224147962450, guid: 34d194a5df63eac419ae8bcefc4aaf9c, type: 3}
+    - target: {fileID: 6943246695591267980, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
+      propertyPath: npcLoot.Array.data[3]
+      value: 
+      objectReference: {fileID: 6771642224147962450, guid: 34d194a5df63eac419ae8bcefc4aaf9c, type: 3}
     - target: {fileID: 7262885994701583942, guid: 87b882d7bd4d9ad459b7b74026ffa1c4, type: 3}
       propertyPath: m_Name
       value: Farmer

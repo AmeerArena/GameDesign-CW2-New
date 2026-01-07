@@ -55,6 +55,20 @@ MonoBehaviour:
     endDialogue: 1
     overrideNext: 0
     nextDialogueIndex: 0
+  - text: Well then, I'm looking for a lot of Iron tomorrow
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: But also
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
   textSpeed: 0.01
   choices:
   - dialogueIndex: 2

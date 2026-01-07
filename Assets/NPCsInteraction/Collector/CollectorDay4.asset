@@ -48,7 +48,21 @@ MonoBehaviour:
     endDialogue: 1
     overrideNext: 0
     nextDialogueIndex: 0
-  - text: No?
+  - text: So no Iron is it?
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: I'll settle for Food and Wood tomorrow
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions: []
+    endDialogue: 1
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: But
     voiceClip: {fileID: 0}
     voiceVolume: 1
     conditions: []

@@ -63,13 +63,13 @@ public class AudioManager : MonoBehaviour
 
     // One-shots 
 
-    public void PlaySfx(AudioClip clip, float volume = 0.5f, float pitch = 1f)
+    public void PlaySfx(AudioClip clip, float volume = 0.2f, float pitch = 1f)
         => PlayOneShot(sfxSource, clip, volume, pitch);
 
-    public void PlayUISfx(AudioClip clip, float volume = 0.2f, float pitch = 1f)
+    public void PlayUISfx(AudioClip clip, float volume = 0.1f, float pitch = 1f)
         => PlayOneShot(uiSource, clip, volume, pitch);
 
-    public void PlayVoice(AudioClip clip, float volume = 0.5f, float pitch = 1f)
+    public void PlayVoice(AudioClip clip, float volume = 0.2f, float pitch = 1f)
         => PlayOneShot(voiceSource, clip, volume, pitch);
 
     static void PlayOneShot(AudioSource src, AudioClip clip, float volume, float pitch)

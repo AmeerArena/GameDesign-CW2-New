@@ -37,6 +37,7 @@ public class NPCController : MonoBehaviour
     public bool hasWood = false;
 
     [SerializeField] public GameObject deadBodyPrefab;
+    [SerializeField] private List<GameObject> npcLoot = new();
 
     public void DayReset()
     {
@@ -141,6 +142,19 @@ public class NPCController : MonoBehaviour
                 GameManager.Instance.GetWorldPositionForLocation(newLocation);
 
             transform.position = targetPos;
+        }
+    }
+
+    public void DropLoot()
+    {
+        foreach (GameObject prefab in npcLoot)
+        {
+            if (prefab == null) continue;
+
+            Vector2 randomOffset = Random.insideUnitCircle * 0.5f;
+            Vector3 spawnPosition = transform.position + (Vector3)randomOffset;
+
+            Instantiate(prefab, spawnPosition, Quaternion.identity);
         }
     }
 }

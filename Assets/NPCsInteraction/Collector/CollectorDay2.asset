@@ -55,11 +55,32 @@ MonoBehaviour:
     endDialogue: 1
     overrideNext: 0
     nextDialogueIndex: 0
-  - text: No?
+  - text: Oh?
     voiceClip: {fileID: 0}
     voiceVolume: 1
     conditions: []
-    endDialogue: 1
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Forget about the wood then
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Make sure you have enough Food for me tomorrow
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: But before I forget
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions: []
+    endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   textSpeed: 0.01

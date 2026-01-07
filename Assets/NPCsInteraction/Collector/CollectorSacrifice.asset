@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CollectorSacrifice
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: Well you better have something to offer
+  - text: You better have something to offer
     voiceClip: {fileID: 0}
     voiceVolume: 1
     conditions: []
@@ -46,7 +46,7 @@ MonoBehaviour:
   - dialogueIndex: 0
     options:
     - optionId: Kill_Farmer
-      text: Sacrifice Farmer
+      text: Sacrifice Farmer (+3 Food)
       nextDialogueIndex: 1
       conditions:
       - {fileID: 11400000, guid: 68f923e4ca8a96a4c89bda613c440b4c, type: 2}
@@ -59,7 +59,7 @@ MonoBehaviour:
       moveTargetLocation: 0
       setFlag: 
     - optionId: Kill_Lumberjack
-      text: Sacrifice Lumberjack
+      text: Sacrifice Lumberjack (+3 Wood)
       nextDialogueIndex: 1
       conditions:
       - {fileID: 11400000, guid: 2498b4328857ab24eb70286ecfc2ab22, type: 2}
@@ -72,7 +72,7 @@ MonoBehaviour:
       moveTargetLocation: 0
       setFlag: 
     - optionId: Kill_Huntress
-      text: Sacrifice Huntress
+      text: Sacrifice Huntress (+1 each item)
       nextDialogueIndex: 1
       conditions:
       - {fileID: 11400000, guid: a24c606dcf54162458aaee4a1d2f7594, type: 2}
@@ -85,7 +85,7 @@ MonoBehaviour:
       moveTargetLocation: 0
       setFlag: 
     - optionId: Kill_Miner
-      text: Sacrifice Miner
+      text: Sacrifice Miner (+3 Iron)
       nextDialogueIndex: 1
       conditions:
       - {fileID: 11400000, guid: 7203578a9a081484a9a323af5b18ba4c, type: 2}
