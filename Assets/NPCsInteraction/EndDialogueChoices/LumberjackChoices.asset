@@ -14,26 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: ...
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: What should I do?
+    voiceClip: {fileID: 8300000, guid: 7ffe8a73c8e864f3098d272b75181f4f, type: 3}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Alright.
+    voiceClip: {fileID: 8300000, guid: 2413d729741324d14a15cae4a2a1af77, type: 3}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 1
     nextDialogueIndex: 0
   - text: Thanks.
+    voiceClip: {fileID: 8300000, guid: ddf8ae48f829e4942832b0ff7d158072, type: 3}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 1
     nextDialogueIndex: 0
   - text: Goodbye.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 1
     overrideNext: 0
