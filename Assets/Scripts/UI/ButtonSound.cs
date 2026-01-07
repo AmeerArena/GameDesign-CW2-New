@@ -13,6 +13,6 @@ public class ButtonSound : MonoBehaviour
 
     void PlaySound()
     {
-        AudioManager.Instance?.PlayUISfx(clickSound);
+        AudioManager.Instance?.PlaySfx(clickSound);
     }
 }

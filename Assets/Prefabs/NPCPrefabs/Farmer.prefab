@@ -149,6 +149,11 @@ MonoBehaviour:
   npcFullSprite1: {fileID: -1006144519, guid: 437518ada880bd24993bf5ba5abbf2a5, type: 3}
   npcFullSprite2: {fileID: 322475053, guid: 437518ada880bd24993bf5ba5abbf2a5, type: 3}
   npcFullSprite3: {fileID: 1644659949, guid: 437518ada880bd24993bf5ba5abbf2a5, type: 3}
+  greetingVoice: {fileID: 8300000, guid: 0ca581e5b5f1b40458d29752054ed732, type: 3}
+  farewellVoice: {fileID: 8300000, guid: 65d0c9e10bdd34cd8b2b25c62bb59037, type: 3}
+  typingSound: {fileID: 8300000, guid: d060ed423b7e14711a371be99e382e52, type: 3}
+  typingVolume: 0.5
+  typingSoundInterval: 0.06
   dialogueStates:
   - conditions:
     - {fileID: 11400000, guid: fae694af12f14ab459d1d17b1f17ee9a, type: 2}
@@ -177,3 +182,4 @@ MonoBehaviour:
   hasEaten: 0
   hasWood: 0
   deadBodyPrefab: {fileID: 2312438343009154117, guid: c3107d1cab90f5b44bad45afc4080fa1, type: 3}
+  npcLoot: []

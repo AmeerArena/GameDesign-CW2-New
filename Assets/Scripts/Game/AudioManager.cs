@@ -18,13 +18,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private string musicVolParam  = "MusicVol";
     [SerializeField] private string sfxVolParam    = "SfxVol";
     [SerializeField] private string voiceVolParam  = "VoiceVol";
-    [SerializeField] private string uiVolParam     = "UiVol";
+
+    [SerializeField] private AudioMixerGroup musicGroup;
+    [SerializeField] private AudioMixerGroup sfxGroup;
+    [SerializeField] private AudioMixerGroup voiceGroup;
 
     [Header("Audio Sources")]
     public AudioSource musicSource;
     public AudioSource sfxSource;
     public AudioSource voiceSource;
-    public AudioSource uiSource;
 
     void Awake()
     {
@@ -48,7 +50,6 @@ public class AudioManager : MonoBehaviour
         if (musicSource == null) musicSource = gameObject.AddComponent<AudioSource>();
         if (sfxSource == null)   sfxSource   = gameObject.AddComponent<AudioSource>();
         if (voiceSource == null) voiceSource = gameObject.AddComponent<AudioSource>();
-        if (uiSource == null)    uiSource    = gameObject.AddComponent<AudioSource>();
     }
 
     void ConfigureDefaults()
@@ -58,18 +59,19 @@ public class AudioManager : MonoBehaviour
 
         sfxSource.playOnAwake = false;
         voiceSource.playOnAwake = false;
-        uiSource.playOnAwake = false;
+
+        if (musicGroup) musicSource.outputAudioMixerGroup = musicGroup;
+        if (sfxGroup)   sfxSource.outputAudioMixerGroup   = sfxGroup;
+        if (voiceGroup) voiceSource.outputAudioMixerGroup = voiceGroup;
+
     }
 
     // One-shots 
 
-    public void PlaySfx(AudioClip clip, float volume = 0.2f, float pitch = 1f)
+    public void PlaySfx(AudioClip clip, float volume = 0.5f, float pitch = 1f)
         => PlayOneShot(sfxSource, clip, volume, pitch);
 
-    public void PlayUISfx(AudioClip clip, float volume = 0.1f, float pitch = 1f)
-        => PlayOneShot(uiSource, clip, volume, pitch);
-
-    public void PlayVoice(AudioClip clip, float volume = 0.2f, float pitch = 1f)
+    public void PlayVoice(AudioClip clip, float volume = 0.5f, float pitch = 1f)
         => PlayOneShot(voiceSource, clip, volume, pitch);
 
     static void PlayOneShot(AudioSource src, AudioClip clip, float volume, float pitch)
@@ -81,7 +83,7 @@ public class AudioManager : MonoBehaviour
 
     // Music 
 
-    public void PlayMusic(AudioClip clip, float volume = 0.05f)
+    public void PlayMusic(AudioClip clip, float volume = 0.1f)
     {
         if (musicSource == null || clip == null) return;
         if (musicSource.clip == clip && musicSource.isPlaying) return;
@@ -91,17 +93,17 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlayMenuMusic(float volume = 0.05f)
+    public void PlayMenuMusic(float volume = 0.1f)
     {
         PlayMusic(menuMusic, volume);
     }
 
-    public void PlayDayMusic(float volume = 0.05f)
+    public void PlayDayMusic(float volume = 0.1f)
     {
         PlayMusic(tiledDayMusic, volume);
     }
 
-    public void PlayNightMusic(float volume = 0.05f)
+    public void PlayNightMusic(float volume = 0.1f)
     {
         PlayMusic(tiledNightMusic, volume);
     }
@@ -111,19 +113,6 @@ public class AudioManager : MonoBehaviour
         if (musicSource == null) return;
         musicSource.Stop();
         musicSource.clip = null;
-    }
-
-    public void FadeMusicTo(float targetVolume, float duration)
-    {
-        if (musicSource == null) return;
-
-        if (duration <= 0f)
-        {
-            musicSource.volume = Mathf.Clamp01(targetVolume);
-            return;
-        }
-        StopAllCoroutines();
-        StartCoroutine(FadeRoutine(musicSource, Mathf.Clamp01(targetVolume), duration));
     }
 
     System.Collections.IEnumerator FadeRoutine(AudioSource src, float target, float duration)
@@ -147,7 +136,6 @@ public class AudioManager : MonoBehaviour
     public void SetMusicVolume01(float v)  => SetMixerVolume01(musicVolParam, v);
     public void SetSfxVolume01(float v)    => SetMixerVolume01(sfxVolParam, v);
     public void SetVoiceVolume01(float v)  => SetMixerVolume01(voiceVolParam, v);
-    public void SetUiVolume01(float v)     => SetMixerVolume01(uiVolParam, v);
 
     void SetMixerVolume01(string param, float value01)
     {

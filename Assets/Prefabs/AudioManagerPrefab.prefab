@@ -48,12 +48,14 @@ MonoBehaviour:
   menuMusic: {fileID: 8300000, guid: 19ed4ded0169e4116851c1b24b79f237, type: 3}
   tiledDayMusic: {fileID: 8300000, guid: fb73dccae8dd9418ca4aeca34fcc1628, type: 3}
   tiledNightMusic: {fileID: 8300000, guid: b86ed4ec0c78a4f49bb47fd1467420b5, type: 3}
-  masterMixer: {fileID: 0}
+  masterMixer: {fileID: 24100000, guid: 6df98be24748a4e838005dc5bdf024fe, type: 2}
   masterVolParam: MasterVol
   musicVolParam: MusicVol
   sfxVolParam: SfxVol
   voiceVolParam: VoiceVol
-  uiVolParam: UiVol
+  musicGroup: {fileID: 5058732835124880320, guid: 6df98be24748a4e838005dc5bdf024fe, type: 2}
+  sfxGroup: {fileID: -5926533703210738766, guid: 6df98be24748a4e838005dc5bdf024fe, type: 2}
+  voiceGroup: {fileID: 7296481902888334349, guid: 6df98be24748a4e838005dc5bdf024fe, type: 2}
   musicSource: {fileID: 0}
   sfxSource: {fileID: 0}
   voiceSource: {fileID: 0}

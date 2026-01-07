@@ -245,7 +245,7 @@ public class DialogueNPC : MonoBehaviour, IInteractable
         if (Time.unscaledTime - lastTypingSoundTime < typingSoundInterval) return;
         lastTypingSoundTime = Time.unscaledTime;
 
-        AudioManager.Instance?.PlayUISfx(typingSound, typingVolume);
+        AudioManager.Instance?.PlaySfx(typingSound, typingVolume);
     }
 
     // check if dialogue condition is met
