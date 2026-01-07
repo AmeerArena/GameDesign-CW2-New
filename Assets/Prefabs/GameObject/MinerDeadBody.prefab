@@ -100,6 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcId: Dead Miner
   portrait: {fileID: 0}
+  typingSound: {fileID: 8300000, guid: 7be8978bc448f4beda387bebb349d411, type: 3}
+  typingVolume: 0.5
+  typingSoundInterval: 0.09
   dialogueStates:
   - conditions: []
     dialogue: {fileID: 11400000, guid: 37cea7ef40795c54da9cfc7766d4c733, type: 2}

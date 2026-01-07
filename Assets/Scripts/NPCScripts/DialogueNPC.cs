@@ -7,6 +7,16 @@ public class DialogueNPC : MonoBehaviour, IInteractable
     public string npcId;
     public Sprite portrait;
 
+    [Header("Collector laugh")]
+    [SerializeField] private AudioClip collectorVoice;
+
+    [Header("Typing SFX")]
+    [SerializeField] private AudioClip typingSound;
+    [SerializeField, Range(0f, 1f)] private float typingVolume = 0.5f;
+    [SerializeField] private float typingSoundInterval = 0.09f;
+
+    private float lastTypingSoundTime;
+
     [Header("Dialogue States")]
     public DialogueState[] dialogueStates;
 
@@ -215,10 +225,27 @@ public class DialogueNPC : MonoBehaviour, IInteractable
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex].text)
         {
             dialogueUI.SetDialogueText(dialogueUI.dialogueText.text + letter);
+            TryPlayTypingSound(letter);
             yield return new WaitForSecondsRealtime(dialogueData.textSpeed);
         }
 
         isTalking = false;
+    }
+
+    bool IsTypingChar(char c)
+    {
+        return char.IsLetterOrDigit(c);
+    }
+
+    void TryPlayTypingSound(char c)
+    {
+        if (typingSound == null) return;
+        if (!IsTypingChar(c)) return;
+
+        if (Time.unscaledTime - lastTypingSoundTime < typingSoundInterval) return;
+        lastTypingSoundTime = Time.unscaledTime;
+
+        AudioManager.Instance?.PlayUISfx(typingSound, typingVolume);
     }
 
     // check if dialogue condition is met
@@ -343,7 +370,18 @@ public class DialogueNPC : MonoBehaviour, IInteractable
     void DisplayCurrentLine()
     {
         StopAllCoroutines();
+        PlayCurrentLineVoice();
         StartCoroutine(TypeLine());
+    }
+
+    void PlayCurrentLineVoice()
+    {
+        if (dialogueData == null) return;
+        if (dialogueIndex < 0 || dialogueIndex >= dialogueData.dialogueLines.Length) return;
+
+        var line = dialogueData.dialogueLines[dialogueIndex];
+        if (line != null && line.voiceClip != null)
+            AudioManager.Instance?.PlayVoice(line.voiceClip, 1f);
     }
 
     public void EndDialogue()
@@ -400,6 +438,7 @@ public class DialogueNPC : MonoBehaviour, IInteractable
         dialogueUI.SetDialogueText("");
         dialogueUI.ShowDialogueUI(false);
         dialogueUI.ShowDarkBackground(false);
+        AudioManager.Instance?.PlayVoice(collectorVoice);
         AudioManager.Instance?.PlayDayMusic();
         GameState.Instance.MarkNPCTalked(npcId);
         GameState.Instance.ClearDialogueFlag("Will_Sacrifice");

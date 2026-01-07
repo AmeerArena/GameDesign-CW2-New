@@ -14,26 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: Give me the tribute
+    voiceClip: {fileID: 8300000, guid: 194c134c948e84d20872fbf950c5222a, type: 3}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: 4 Food and 4 Wood.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: You have served me well.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Keep it up
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 1
     overrideNext: 0
     nextDialogueIndex: 0
   - text: No?
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 1
     overrideNext: 0

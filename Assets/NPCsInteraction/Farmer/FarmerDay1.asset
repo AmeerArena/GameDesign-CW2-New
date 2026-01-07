@@ -22,7 +22,7 @@ MonoBehaviour:
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "These Crops ain\u2019t gonna grow themselves in this weather."
-    voiceClip: {fileID: 8300000, guid: 09820cd65d7b44555aaa48d5bfb5959d, type: 3}
+    voiceClip: {fileID: 0}
     voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: 32e8b5054b2c21e47ac8ca0e044b4eb9, type: 2}

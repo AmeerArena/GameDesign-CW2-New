@@ -18,7 +18,7 @@ public class NPC : MonoBehaviour, IInteractable
     [SerializeField] private AudioClip farewellVoice;
 
     [SerializeField] private AudioClip typingSound;
-    [SerializeField, Range(0f, 1f)] private float typingVolume = 0.4f;
+    [SerializeField, Range(0f, 1f)] private float typingVolume = 0.5f;
     [SerializeField] private float typingSoundInterval = 0.07f;
 
     private float lastTypingSoundTime;
