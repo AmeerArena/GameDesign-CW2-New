@@ -11,6 +11,19 @@ public class NPC : MonoBehaviour, IInteractable
     public Sprite npcFullSprite1;
     public Sprite npcFullSprite2;
     public Sprite npcFullSprite3;
+
+
+    [Header("NPC Audio")]
+    [SerializeField] private AudioClip greetingVoice;
+    [SerializeField] private AudioClip farewellVoice;
+
+    [SerializeField] private AudioClip typingSound;
+    [SerializeField, Range(0f, 1f)] private float typingVolume = 0.4f;
+    [SerializeField] private float typingSoundInterval = 0.07f;
+
+    private float lastTypingSoundTime;
+
+
     [Header("Dialogue States (Top = Highest Priority)")]
     public DialogueState[] dialogueStates;
 
@@ -80,6 +93,7 @@ public class NPC : MonoBehaviour, IInteractable
         dialogueUI.SetNPCInfo(npcId, getNPCSprite());
         dialogueUI.SetCurrentSpeaker(npcController);
         dialogueUI.ShowDialogueUI(true);
+        AudioManager.Instance?.PlayVoice(greetingVoice);
 
         PauseController.EscapeBlocked = true;
         PauseController.SetPause(true, false);
@@ -179,6 +193,7 @@ public class NPC : MonoBehaviour, IInteractable
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex].text)
         {
             dialogueUI.SetDialogueText(dialogueUI.dialogueText.text + letter);
+            TryPlayTypingSound(letter);
             yield return new WaitForSecondsRealtime(dialogueData.textSpeed);
         }
 
@@ -294,7 +309,18 @@ public class NPC : MonoBehaviour, IInteractable
     void DisplayCurrentLine()
     {
         StopAllCoroutines();
+        PlayCurrentLineVoice();
         StartCoroutine(TypeLine());
+    }
+
+    void PlayCurrentLineVoice()
+    {
+        if (dialogueData == null) return;
+        if (dialogueIndex < 0 || dialogueIndex >= dialogueData.dialogueLines.Length) return;
+
+        var line = dialogueData.dialogueLines[dialogueIndex];
+        if (line != null && line.voiceClip != null)
+            AudioManager.Instance?.PlayVoice(line.voiceClip, 1f);
     }
 
     Sprite getNPCSprite()
@@ -347,11 +373,28 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueUI.SetDialogueText("");
         dialogueUI.ShowDialogueUI(false);
+        AudioManager.Instance?.PlayVoice(farewellVoice);
         PauseController.SetPause(false, false);
         PauseController.EscapeBlocked = false;
 
         // Reset for next interaction
         activeDialogues.Clear();
         currentDialogueStateIndex = 0;
+    }
+
+    void TryPlayTypingSound(char letter)
+    {
+        if (typingSound == null) return;
+
+        // Skip spaces & punctuation
+        if (char.IsWhiteSpace(letter) || char.IsPunctuation(letter))
+            return;
+
+        // Throttle sound rate
+        if (Time.unscaledTime - lastTypingSoundTime < typingSoundInterval)
+            return;
+
+        lastTypingSoundTime = Time.unscaledTime;
+        AudioManager.Instance?.PlayUISfx(typingSound, typingVolume);
     }
 }

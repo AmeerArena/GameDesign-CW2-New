@@ -91,17 +91,17 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlayMenuMusic(float volume = 1f)
+    public void PlayMenuMusic(float volume = 0.5f)
     {
         PlayMusic(menuMusic, volume);
     }
 
-    public void PlayDayMusic(float volume = 1f)
+    public void PlayDayMusic(float volume = 0.5f)
     {
         PlayMusic(tiledDayMusic, volume);
     }
 
-    public void PlayNightMusic(float volume = 1f)
+    public void PlayNightMusic(float volume = 0.5f)
     {
         PlayMusic(tiledNightMusic, volume);
     }

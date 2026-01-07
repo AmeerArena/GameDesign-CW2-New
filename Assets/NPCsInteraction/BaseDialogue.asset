@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7aa884e2726914ba33210673ecb485, type: 3}
   m_Name: BaseDialogue
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - text: 
+    voiceClip: {fileID: 0}
+    voiceVolume: 0
+    conditions: []
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
   textSpeed: 0.01
   choices: []

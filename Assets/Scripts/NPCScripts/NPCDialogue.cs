@@ -19,6 +19,10 @@ public class DialogueLine
     [TextArea]
     public string text;
 
+    [Header("Optional AudioClip")]
+    public AudioClip voiceClip;
+    [Range(0f, 1f)] public float voiceVolume = 1f;
+
     public DialogueCondition[] conditions; // optional
     public bool endDialogue;
 
