@@ -14,35 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: Good morning young man
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: 32e8b5054b2c21e47ac8ca0e044b4eb9, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "These Crops ain\u2019t gonna grow themselves in this weather."
+    voiceClip: {fileID: 8300000, guid: 09820cd65d7b44555aaa48d5bfb5959d, type: 3}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: 32e8b5054b2c21e47ac8ca0e044b4eb9, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: I may be old but I can still work a field if you say.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: 32e8b5054b2c21e47ac8ca0e044b4eb9, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Getting this town fed is my specialty.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: So you saw the kid?
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: a3718f969facb454e96761338ff3b2af, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Poor boy, no child deserves to live without a parent.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: a3718f969facb454e96761338ff3b2af, type: 2}
     endDialogue: 0
@@ -50,6 +62,8 @@ MonoBehaviour:
     nextDialogueIndex: 0
   - text: If you see him again be sure to tell him that he is more than welcome to
       stay with me if he wants.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: a3718f969facb454e96761338ff3b2af, type: 2}
     endDialogue: 0

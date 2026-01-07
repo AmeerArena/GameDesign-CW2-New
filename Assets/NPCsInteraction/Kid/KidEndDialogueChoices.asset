@@ -14,21 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: ...
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Okay.
+    voiceClip: {fileID: 8300000, guid: 445202ed26e224858b23fd752e8f9a40, type: 3}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 1
     nextDialogueIndex: 0
   - text: Thanks.
+    voiceClip: {fileID: 8300000, guid: ceab38714435f46bea8527281fef866a, type: 3}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 1
     nextDialogueIndex: 0
   - text: Bye bye.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 1
     overrideNext: 0

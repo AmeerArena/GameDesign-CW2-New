@@ -100,8 +100,17 @@ public class GameManager : MonoBehaviour
     {
         previousScene = SceneManager.GetActiveScene().name;
         Time.timeScale = 1f;
+
+        ResetRunState();
         SetDay(1);
+
+        InventorySystem inventory = FindObjectOfType<InventorySystem>();
+        if (inventory != null)
+        {
+            inventory.ResetInventory();
+        }
         SceneManager.LoadScene(gameSceneName);
+        
     }
 
     public void LoadSettings()
@@ -415,6 +424,75 @@ public class GameManager : MonoBehaviour
         if (npc == null)
             return;
 
+        //GameObject corpse = Instantiate(npc.deadBodyPrefab);
+        //corpse.transform.position = npc.gameObject.transform.position;
         Destroy(npc.gameObject);
     }
+
+    private void ResetRunState()
+    {
+        pendingRewards.Clear();
+        pendingHunts.Clear();
+        pendingMoves.Clear();
+        mineNPCsToday.Clear();
+        currentObjectIndex = -1;
+
+        npcs.Clear();
+
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Music
+        if (AudioManager.Instance != null)
+        {
+            if (scene.name == mainMenuSceneName || scene.name == settingsSceneName)
+            {
+                AudioManager.Instance.PlayMenuMusic();
+            }
+            else if (scene.name == gameSceneName)
+            {
+                AudioManager.Instance.PlayDayMusic();
+            }
+            // else: do nothing (keeps current music)
+        }
+
+
+
+        if (scene.name != gameSceneName) return;
+
+        GameManagerRefs refs = FindObjectOfType<GameManagerRefs>(true);
+        if (refs == null)
+        {
+            Debug.LogWarning("GameManagerRefs not found in TiledScene. Scene references not wired.");
+            npcs = new List<NPCController>(FindObjectsOfType<NPCController>(true));
+            return;
+        }
+
+        dayCounter = refs.dayCounter;
+        dayObjectGroups = refs.dayObjectGroups;
+        objectsToShow = refs.objectsToShow;
+        npcLocationPositions = refs.npcLocationPositions;
+        gameResources = refs.gameResources;
+        ironResource = refs.ironResource;
+
+        if (refs.npcs != null && refs.npcs.Count > 0)
+            npcs = refs.npcs;
+        else
+            npcs = new List<NPCController>(FindObjectsOfType<NPCController>(true));
+
+        Debug.Log($"SceneLoaded: wired refs. npcs={npcs.Count}, dayGroups={dayObjectGroups.Count}, objectsToShow={objectsToShow.Count}");
+    }
+
+
 }
