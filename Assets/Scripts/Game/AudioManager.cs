@@ -81,7 +81,7 @@ public class AudioManager : MonoBehaviour
 
     // Music 
 
-    public void PlayMusic(AudioClip clip, float volume = 1f)
+    public void PlayMusic(AudioClip clip, float volume = 0.5f)
     {
         if (musicSource == null || clip == null) return;
         if (musicSource.clip == clip && musicSource.isPlaying) return;
@@ -91,17 +91,17 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlayMenuMusic(float volume = 0.5f)
+    public void PlayMenuMusic(float volume = 0.25f)
     {
         PlayMusic(menuMusic, volume);
     }
 
-    public void PlayDayMusic(float volume = 0.5f)
+    public void PlayDayMusic(float volume = 0.25f)
     {
         PlayMusic(tiledDayMusic, volume);
     }
 
-    public void PlayNightMusic(float volume = 0.5f)
+    public void PlayNightMusic(float volume = 0.25f)
     {
         PlayMusic(tiledNightMusic, volume);
     }
