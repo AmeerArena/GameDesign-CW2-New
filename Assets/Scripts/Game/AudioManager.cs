@@ -63,13 +63,13 @@ public class AudioManager : MonoBehaviour
 
     // One-shots 
 
-    public void PlaySfx(AudioClip clip, float volume = 1f, float pitch = 1f)
+    public void PlaySfx(AudioClip clip, float volume = 0.5f, float pitch = 1f)
         => PlayOneShot(sfxSource, clip, volume, pitch);
 
     public void PlayUISfx(AudioClip clip, float volume = 0.2f, float pitch = 1f)
         => PlayOneShot(uiSource, clip, volume, pitch);
 
-    public void PlayVoice(AudioClip clip, float volume = 1f, float pitch = 1f)
+    public void PlayVoice(AudioClip clip, float volume = 0.5f, float pitch = 1f)
         => PlayOneShot(voiceSource, clip, volume, pitch);
 
     static void PlayOneShot(AudioSource src, AudioClip clip, float volume, float pitch)
@@ -81,7 +81,7 @@ public class AudioManager : MonoBehaviour
 
     // Music 
 
-    public void PlayMusic(AudioClip clip, float volume = 1f)
+    public void PlayMusic(AudioClip clip, float volume = 0.05f)
     {
         if (musicSource == null || clip == null) return;
         if (musicSource.clip == clip && musicSource.isPlaying) return;
@@ -91,17 +91,17 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlayMenuMusic(float volume = 0.5f)
+    public void PlayMenuMusic(float volume = 0.05f)
     {
         PlayMusic(menuMusic, volume);
     }
 
-    public void PlayDayMusic(float volume = 0.5f)
+    public void PlayDayMusic(float volume = 0.05f)
     {
         PlayMusic(tiledDayMusic, volume);
     }
 
-    public void PlayNightMusic(float volume = 0.5f)
+    public void PlayNightMusic(float volume = 0.05f)
     {
         PlayMusic(tiledNightMusic, volume);
     }
