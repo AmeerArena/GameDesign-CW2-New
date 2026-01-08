@@ -100,7 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcId: Dead Lumberjack
   portrait: {fileID: 0}
-  typingSound: {fileID: 8300000, guid: 7be8978bc448f4beda387bebb349d411, type: 3}
+  collectorVoice: {fileID: 0}
+  typingSound: {fileID: 8300000, guid: d060ed423b7e14711a371be99e382e52, type: 3}
   typingVolume: 0.5
   typingSoundInterval: 0.09
   dialogueStates:

@@ -401,6 +401,6 @@ public class NPC : MonoBehaviour, IInteractable
             return;
 
         lastTypingSoundTime = Time.unscaledTime;
-        AudioManager.Instance?.PlayUISfx(typingSound, typingVolume);
+        AudioManager.Instance?.PlaySfx(typingSound, typingVolume);
     }
 }
