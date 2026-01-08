@@ -19343,6 +19343,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Huntress
       objectReference: {fileID: 0}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: dialogueStates.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: dialogueStates.Array.data[1].dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: a1a131aa17cca44c98066e76d92dc1c2, type: 2}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: dialogueStates.Array.data[2].dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e90a5006440b44ec93a3211a4791c12, type: 2}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: dialogueStates.Array.data[1].endAllDialogue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: dialogueStates.Array.data[2].endAllDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: dialogueStates.Array.data[1].conditions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421621572284942578, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
+      propertyPath: dialogueStates.Array.data[1].conditions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b08f0815806f37e429c6c12bd2548869, type: 2}
     - target: {fileID: 6455694562499633249, guid: 5f77b600d7def274384e8aa1fae581e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.42
