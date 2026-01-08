@@ -339,14 +339,6 @@ public class GameManager : MonoBehaviour
         #endif
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Equals))   // press = key
-        {
-            IncrementDay();
-        }
-    }
-
     // remove npc from list when destroying them
     public void UnregisterNPC(NPCController npc)
     {

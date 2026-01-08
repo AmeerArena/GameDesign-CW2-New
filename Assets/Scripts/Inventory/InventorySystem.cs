@@ -33,8 +33,8 @@ public class InventorySystem : MonoBehaviour
             slot.Clear();
         }
 
-        AddResource(resource, 90);
-        AddResource(resource2, 90);
+        AddResource(resource, 3);
+        AddResource(resource2, 3);
         return;
     }
 
