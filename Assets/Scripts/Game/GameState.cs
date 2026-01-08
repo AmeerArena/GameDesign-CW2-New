@@ -9,6 +9,11 @@ public class GameState : MonoBehaviour
     private HashSet<string> usedDialogueOptions = new();
     private HashSet<string> dialogueFlags = new HashSet<string>();
 
+    private static readonly HashSet<string> dailyResetFlags = new()
+    {
+        "Will_Sacrifice"
+    };
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -45,7 +50,15 @@ public class GameState : MonoBehaviour
     public void ResetDailyData()
     {
         talkedToNPCs.Clear();
-        dialogueFlags.Clear();
+    
+        foreach (var flag in dailyResetFlags)
+        {
+            dialogueFlags.Remove(flag);
+        }
+        foreach (var flag in dialogueFlags)
+        {
+            Debug.Log(flag);
+        }
     }
 
     public bool IsDialogueFlagSet(string flagName)

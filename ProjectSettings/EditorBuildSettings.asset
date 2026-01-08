@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Ending_Cave.unity
     guid: 6784076dc73bc794e93e32cd821b0ce8
   - enabled: 1
+    path: Assets/Scenes/Ending_Revenge.unity
+    guid: e1e576b73cdef14489ebda93f83612cf
+  - enabled: 1
     path: Assets/Scenes/TiledScene.unity
     guid: 889fab84225e7417c85d5427a60b1951
   m_configObjects: {}

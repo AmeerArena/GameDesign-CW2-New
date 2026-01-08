@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: where should I go?
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: okay.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 1
     overrideNext: 0
@@ -40,6 +44,7 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 1
+      setFlag: KidWithFarmer
     - optionId: Stay_With_Lumberjack
       text: Stay with the Lumberjack
       nextDialogueIndex: 1
@@ -53,6 +58,7 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 2
+      setFlag: 
     - optionId: Stay_With_Huntress
       text: Stay with the Huntress
       nextDialogueIndex: 1
@@ -66,6 +72,7 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 3
+      setFlag: 
     - optionId: Stay_With_Miner
       text: Stay with the Miner
       nextDialogueIndex: 1
@@ -79,3 +86,4 @@ MonoBehaviour:
       food: 0
       wood: 0
       moveTargetLocation: 4
+      setFlag: 
