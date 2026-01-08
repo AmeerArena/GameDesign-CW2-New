@@ -283,6 +283,12 @@ public class NPC : MonoBehaviour, IInteractable
                 break;
         }
 
+        if (!string.IsNullOrEmpty(option.setFlag))
+        {
+            GameState.Instance.SetDialogueFlag(option.setFlag);
+            Debug.Log(option.setFlag);
+        }
+
         // If the transaction succeeded, apply NPC effects
         if (success)
         {

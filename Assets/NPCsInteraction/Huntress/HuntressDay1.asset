@@ -14,40 +14,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - text: "So you\u2019re the new mayor?"
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: b3d9849fc3423bd4ab12c93f9df9c4cc, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Hope you got more backbone than the last guy.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: b3d9849fc3423bd4ab12c93f9df9c4cc, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "Right now you\u2019re looking at the best hunter in town."
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
+  - text: When out in a Hunt I can find anything.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions:
+    - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
+  - text: Sure there is a bit of luck to it, but I can always get something from
+      a hunt.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
+    conditions:
+    - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
+    endDialogue: 0
+    overrideNext: 0
+    nextDialogueIndex: 0
   - text: So tell me when you need a job done properly.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions: []
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: Oh, you talked to him, that Lumberjack.
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "\u2026"
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
     endDialogue: 0
     overrideNext: 0
     nextDialogueIndex: 0
   - text: "It\u2019s nothing, don't worry about it."
+    voiceClip: {fileID: 0}
+    voiceVolume: 1
     conditions:
     - {fileID: 11400000, guid: ea900470f3e330b4a9da1c1b133c6bcb, type: 2}
     endDialogue: 0

@@ -331,6 +331,7 @@ public class DialogueNPC : MonoBehaviour, IInteractable
         if (!string.IsNullOrEmpty(option.setFlag))
         {
             GameState.Instance.SetDialogueFlag(option.setFlag);
+            Debug.Log(option.setFlag);
             flagChangedThisDialogue = true;
         }
     }
