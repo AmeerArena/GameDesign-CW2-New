@@ -153,7 +153,7 @@ MonoBehaviour:
   farewellVoice: {fileID: 8300000, guid: d33e23a2fde0cb244b8af7d4ec70a3e7, type: 3}
   typingSound: {fileID: 8300000, guid: d33e23a2fde0cb244b8af7d4ec70a3e7, type: 3}
   typingVolume: 0.5
-  typingSoundInterval: 0.06
+  typingSoundInterval: 0.05
   dialogueStates:
   - conditions:
     - {fileID: 11400000, guid: fae694af12f14ab459d1d17b1f17ee9a, type: 2}

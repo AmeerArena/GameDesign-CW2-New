@@ -153,7 +153,7 @@ MonoBehaviour:
   farewellVoice: {fileID: 8300000, guid: 4af52c13232caa042b377b0a0bf518dc, type: 3}
   typingSound: {fileID: 8300000, guid: 4af52c13232caa042b377b0a0bf518dc, type: 3}
   typingVolume: 0.5
-  typingSoundInterval: 0.06
+  typingSoundInterval: 0.07
   dialogueStates:
   - conditions:
     - {fileID: 11400000, guid: fae694af12f14ab459d1d17b1f17ee9a, type: 2}
@@ -164,7 +164,7 @@ MonoBehaviour:
     dialogue: {fileID: 11400000, guid: a6f3cab8c593d304c95fc9e64246cc5e, type: 2}
     endAllDialogue: 0
   - conditions: []
-    dialogue: {fileID: 11400000, guid: 2ac3995b80e5ca14b84e70cc0ba101a5, type: 2}
+    dialogue: {fileID: 11400000, guid: dea0ab13e616a4c47b17ad74ef8ac8ae, type: 2}
     endAllDialogue: 1
 --- !u!114 &4741978567301711964
 MonoBehaviour:
@@ -186,4 +186,8 @@ MonoBehaviour:
   hasEaten: 0
   hasWood: 0
   deadBodyPrefab: {fileID: 8153071563801337405, guid: b1c4bb99166fbd44482322ae8661e2aa, type: 3}
-  npcLoot: []
+  npcLoot:
+  - {fileID: 8516137701223499784, guid: 37e3b9aeb7384764a884f4a7910f032f, type: 3}
+  - {fileID: 8516137701223499784, guid: 37e3b9aeb7384764a884f4a7910f032f, type: 3}
+  - {fileID: 8516137701223499784, guid: 37e3b9aeb7384764a884f4a7910f032f, type: 3}
+  - {fileID: 2493006076219882091, guid: 39b21d9c97f0b4e4bbd3d26cf84fef09, type: 3}
