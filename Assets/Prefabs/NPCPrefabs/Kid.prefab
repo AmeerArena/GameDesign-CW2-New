@@ -149,8 +149,8 @@ MonoBehaviour:
   npcFullSprite1: {fileID: 1524430738, guid: 4013c540e80b4934292ef3acef8d9612, type: 3}
   npcFullSprite2: {fileID: 386622405, guid: 4013c540e80b4934292ef3acef8d9612, type: 3}
   npcFullSprite3: {fileID: -1240632560, guid: 4013c540e80b4934292ef3acef8d9612, type: 3}
-  greetingVoice: {fileID: 8300000, guid: d33e23a2fde0cb244b8af7d4ec70a3e7, type: 3}
-  farewellVoice: {fileID: 8300000, guid: d33e23a2fde0cb244b8af7d4ec70a3e7, type: 3}
+  greetingVoice: {fileID: 8300000, guid: ca27feeb1f7864fff998c9f3c0bb0d7f, type: 3}
+  farewellVoice: {fileID: 8300000, guid: 8f2171df267f24123842e72d5b3495f0, type: 3}
   typingSound: {fileID: 8300000, guid: d33e23a2fde0cb244b8af7d4ec70a3e7, type: 3}
   typingVolume: 0.5
   typingSoundInterval: 0.06
